@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TableItem">
+        <attr name="titleText" format="reference|string" />
+        <attr name="subText" format="reference|string" />
+        <attr name="dividerSize" format="reference|boolean" />
+    </declare-styleable>
+    <declare-styleable name="TableLine">
+        <attr name="day" format="reference|string" />
+    </declare-styleable>
+</resources>

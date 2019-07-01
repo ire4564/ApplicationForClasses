@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        android:weightSum="6">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <com.example.applicateclass.TimeTable.CustomOneLine
+                    android:id="@+id/table_standard_line"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:day="">
+
+                </com.example.applicateclass.TimeTable.CustomOneLine>
+
+                <com.example.applicateclass.TimeTable.CustomOneLine
+                    android:id="@+id/table_mon_line"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:day="월">
+
+                </com.example.applicateclass.TimeTable.CustomOneLine>
+
+                <com.example.applicateclass.TimeTable.CustomOneLine
+                    android:id="@+id/table_thu_line"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:day="화">
+
+                </com.example.applicateclass.TimeTable.CustomOneLine>
+
+                <com.example.applicateclass.TimeTable.CustomOneLine
+                    android:id="@+id/table_wed_line"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:day="수">
+
+                </com.example.applicateclass.TimeTable.CustomOneLine>
+
+                <com.example.applicateclass.TimeTable.CustomOneLine
+                    android:id="@+id/table_thur_line"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:day="목">
+
+                </com.example.applicateclass.TimeTable.CustomOneLine>
+
+                <com.example.applicateclass.TimeTable.CustomOneLine
+                    android:id="@+id/table_fri_line"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:day="금">
+
+                </com.example.applicateclass.TimeTable.CustomOneLine>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</RelativeLayout>

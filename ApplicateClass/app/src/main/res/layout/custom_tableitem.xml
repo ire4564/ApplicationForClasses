@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/tableItemSize"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tableItemIn"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tableItem_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/table_standard"
+                android:text="9시"
+                android:textColor="@color/timeText"
+                android:textSize="@dimen/textSizeBig" />
+
+            <TextView
+                android:id="@+id/tableItem_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/table_standard"
+                android:text="9시"
+                android:textColor="@color/timeTextSub"
+                android:textSize="@dimen/textSizeSmall" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/tableItem_divide"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divideSizeThine"
+            android:background="@color/divideLine" />
+    </LinearLayout>
+
+
+</RelativeLayout>
