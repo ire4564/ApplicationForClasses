@@ -6,6 +6,6 @@
     <dimen name="divideSizeThine">1dp</dimen>
     <dimen name="tableItemSize">40dp</dimen>
     <dimen name="tableItemIn">39dp</dimen>
-    <dimen name="tableAllSize">1080dp</dimen>
+    <dimen name="tableAllSize">1120dp</dimen>
 
 </resources>

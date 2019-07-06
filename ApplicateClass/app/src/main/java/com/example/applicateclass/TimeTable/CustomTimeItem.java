@@ -13,9 +13,10 @@ import android.widget.TextView;
 import com.example.applicateclass.R;
 
 public class CustomTimeItem extends LinearLayout {
-    private TextView title;
-    private TextView sub;
-    private ImageView divideLine;
+    private TextView tvTitle;
+    private TextView tvSub;
+    private ImageView ivDivideLine;
+    private Boolean isFull;
 
     public CustomTimeItem(Context context) {
         super(context);
@@ -39,9 +40,10 @@ public class CustomTimeItem extends LinearLayout {
         View v = li.inflate(R.layout.custom_tableitem, this, false);
         addView(v);
 
-        title = (TextView) findViewById(R.id.tableItem_title);
-        sub = (TextView) findViewById(R.id.tableItem_sub);
-        divideLine = (ImageView)findViewById(R.id.tableItem_divide);
+        tvTitle = (TextView) findViewById(R.id.tableItem_title);
+        tvSub = (TextView) findViewById(R.id.tableItem_sub);
+        ivDivideLine = (ImageView)findViewById(R.id.tableItem_divide);
+        isFull = false;
 
     }
 
@@ -56,20 +58,34 @@ public class CustomTimeItem extends LinearLayout {
     }
     private void setTypeArray(TypedArray typedArray) {
         String titleText = typedArray.getString(R.styleable.TableItem_titleText);
-        title.setText(titleText);
+        tvTitle.setText(titleText);
         String subText = typedArray.getString(R.styleable.TableItem_titleText);
-        sub.setText(subText);
+        tvSub.setText(subText);
 
         boolean visible=true;
         visible = typedArray.getBoolean(R.styleable.TableItem_dividerSize,visible);
         if(!visible)
-            divideLine.setVisibility(View.INVISIBLE);
+            ivDivideLine.setVisibility(View.INVISIBLE);
         else
-            divideLine.setVisibility(View.VISIBLE);
+            ivDivideLine.setVisibility(View.VISIBLE);
 
         typedArray.recycle();
 
     }
 
+    public void setTableItem(String title, String sub, boolean visible){
+        tvTitle.setText(title);
+        tvSub.setText(sub);
 
+        if(!visible)
+            ivDivideLine.setVisibility(View.INVISIBLE);
+        else
+            ivDivideLine.setVisibility(View.VISIBLE);
+
+        isFull = true;
+    }
+
+    public Boolean getFull() {
+        return isFull;
+    }
 }

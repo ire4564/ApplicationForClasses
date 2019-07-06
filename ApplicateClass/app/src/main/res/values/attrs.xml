@@ -8,4 +8,8 @@
     <declare-styleable name="TableLine">
         <attr name="day" format="reference|string" />
     </declare-styleable>
+
+    <declare-styleable name="TableTable">
+
+    </declare-styleable>
 </resources>
