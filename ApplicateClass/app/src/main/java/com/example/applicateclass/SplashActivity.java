@@ -1,4 +1,4 @@
-package com.example.bottomup_school_timetable;
+package com.example.applicateclass;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

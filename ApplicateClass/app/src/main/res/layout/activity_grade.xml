@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <!-- Image icon: hat-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:gravity="center"
+            android:src="@drawable/hat" />
+    </LinearLayout>
+
+    <!--talk box-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1.8"
+        android:background="@drawable/talk_box"
+        android:orientation="vertical">
+
+        <!--talk box texts-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/down_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/scdream3"
+                android:text="자네는 대학교 몇 학년인가?"
+                android:textColor="#f2a3bb"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--buttons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="4.7">
+        <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/grade_gradeBtn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+
+            app:text ="1학년">
+
+        </com.example.applicateclass.CustomView.CustomSelectBtn>
+        <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/grade_gradeBtn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            app:text ="2학년">
+
+        </com.example.applicateclass.CustomView.CustomSelectBtn>
+
+        <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/grade_gradeBtn3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            app:text ="3학년">
+
+        </com.example.applicateclass.CustomView.CustomSelectBtn>
+
+        <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/grade_gradeBtn4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            app:text ="4학년">
+
+        </com.example.applicateclass.CustomView.CustomSelectBtn>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+
+
