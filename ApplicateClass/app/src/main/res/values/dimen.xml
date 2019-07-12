@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSizeBig">14dp</dimen>
+    <dimen name="textSizeSmall">12dp</dimen>
+    <dimen name="divideSizeFat">2dp</dimen>
+    <dimen name="divideSizeThine">1dp</dimen>
+    <dimen name="tableItemSize">40dp</dimen>
+    <dimen name="tableItemIn">39dp</dimen>
+    <dimen name="tableAllSize">1120dp</dimen>
+
+</resources>
