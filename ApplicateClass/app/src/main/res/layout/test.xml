@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,1831 +13,2787 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/tableAllSize">
 
+            <!--9-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_0"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_0"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_0"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+            <!--9 30 -->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--10 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--10 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--11 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--11 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--12 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--12 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--13 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--13 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_9"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_9"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_9"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--14 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_10"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_10"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_10"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--14 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--15 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_12"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_12"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_12"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--15 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_13"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_13"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_13"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--16 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--16 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--17 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--17 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_17"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_17"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_17"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--18 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_18"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_18"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_18"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--18 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_19"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_19"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_19"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--19 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--19 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_21"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_21"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_21"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--20 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_22"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_22"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_22"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--20 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_23"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_23"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_23"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--21 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_24"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_24"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_24"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+            <!--21 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_25"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_25"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_25"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--22 00-->
             <TableRow android:weightSum="6">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_26"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_26"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
 
-                <TextView
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_26"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
+
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
 
+
+
+            <!--22 30-->
             <TableRow android:weightSum="6">
 
-                <TextView
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item0_27"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item1_27"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item2_27"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item3_27"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item4_27"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-                <TextView
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
+
+                <com.example.applicateclass.TimeTable.CustomTimeItem
+                    android:id="@+id/table_item5_27"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-            </TableRow>
+                    app:dividerSize="true"
+                    app:subText="sub"
+                    app:titleText="set">
 
-            <TableRow android:weightSum="6">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#F44336"
-                    android:gravity="center"
-                    android:text="A"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
+                </com.example.applicateclass.TimeTable.CustomTimeItem>
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/divideLine"/>
             </TableRow>
         </TableLayout>
     </ScrollView>

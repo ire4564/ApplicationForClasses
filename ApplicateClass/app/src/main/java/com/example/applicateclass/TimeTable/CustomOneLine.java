@@ -2,7 +2,9 @@ package com.example.applicateclass.TimeTable;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import com.example.applicateclass.R;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CustomOneLine extends LinearLayout {
     private ArrayList<CustomTimeItem> ac_TableTimeItems = new ArrayList<>();
@@ -42,8 +45,7 @@ public class CustomOneLine extends LinearLayout {
         String pkg = getContext().getPackageName();
         for (int i =0; i< 28; ++i){
             int id = getContext().getResources().getIdentifier("table_item"+(i+1), "id", pkg);
-            ac_TableTimeItems.add((CustomTimeItem)findViewById(id));
-            ac_TableTimeItems.get(i).setTableItem(i+"",i+"",true);
+            ac_TableTimeItems.add((CustomTimeItem)v.findViewById(id));
 
         }
 
@@ -64,7 +66,10 @@ public class CustomOneLine extends LinearLayout {
 
     }
 
-    public boolean addTime(int startTime, int endTime, String title, String sub){
+    public boolean addTime(String title, String sub,CustomTimeset item){
+        int startTime = item.getStartTime();
+        int endTime = item.getEndTime();
+
         int startFront  = (startTime-900) / 100;
         int startTail   = (startTime-900) % 100 > 0 ? 1 : 0;
         int endFront    = (endTime-900) / 100;
@@ -78,9 +83,26 @@ public class CustomOneLine extends LinearLayout {
                 return false;
         }
 
+        Log.e("asd",startTime+" "+endTime+" "+ ac_TableTimeItems.get(startTime));
+        ac_TableTimeItems.get(startTime).setTableItem(title, sub, false , Color.parseColor("#a1a1a1"));
+        for(int i = startTime+1; i < endTime; ++i)
+            ac_TableTimeItems.get(i).setTableItem("", "", false , Color.parseColor("#a1a1a1"));
+        ac_TableTimeItems.get(endTime).setTableItem("", "", true , Color.parseColor("#a1a1a1"));
+
 
 
         return true;
+    }
+
+    public void setStandard(){
+        for(int i =0; i<ac_TableTimeItems.size(); ++i){
+            if(i % 2 == 0 )
+                ac_TableTimeItems.get(i).setTableItem(((i/2+9)+"시"),"",false,Color.parseColor("#ffffff"));
+            else
+                ac_TableTimeItems.get(i).setTableItem("","",true,Color.parseColor("#ffffff"));
+
+        }
+
     }
 
 

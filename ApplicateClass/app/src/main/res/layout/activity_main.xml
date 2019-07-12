@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="시간표다 인간들아"/>
+
     <com.example.applicateclass.TimeTable.CustomTimeTable
+        android:id="@+id/main_table"
         android:layout_width="match_parent"
         android:layout_height="400dp">
 
