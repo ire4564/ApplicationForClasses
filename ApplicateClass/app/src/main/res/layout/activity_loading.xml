@@ -2,5 +2,23 @@
 <LinearLayout android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/start_image">
+    android:background="@drawable/background"
+    android:weightSum="1"
+    android:gravity="bottom">
+    
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="232dp"
+        android:background="@drawable/all_logo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="250dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MADE BY. PINKLEMONTEA"
+        android:gravity="center"
+        android:textColor="@color/originText"
+        android:fontFamily="@font/scdream3"
+        android:layout_marginBottom="40dp"/>
 </LinearLayout>

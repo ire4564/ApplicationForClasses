@@ -4,21 +4,41 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:weightSum="1"
-    android:gravity="bottom">
+    android:gravity="center">
     
     <ImageView
         android:layout_width="230dp"
         android:layout_height="232dp"
         android:background="@drawable/all_logo"
         android:layout_gravity="center"
-        android:layout_marginBottom="250dp"/>
+        android:layout_marginBottom="210dp"/>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MADE BY. PINKLEMONTEA"
+        android:layout_height="45dp"
+        android:background="@drawable/white_box"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:gravity="center"
-        android:textColor="@color/originText"
-        android:fontFamily="@font/scdream3"
-        android:layout_marginBottom="40dp"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="-120dp"
+       >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/google"
+           />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in with Google"
+            android:textColor="#000"
+            android:fontFamily="@font/scdream3"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+           />
+
+    </LinearLayout>
+
 </LinearLayout>

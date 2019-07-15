@@ -6,5 +6,7 @@
     <color name="divideLine">#000000</color>
     <color name="timeText">#000000</color>
     <color name="timeTextSub">#4a4a4a</color>
+    <color name="buttonText">#963b57</color>
+    <color name="originText">#f2a3bb</color>
 
 </resources>

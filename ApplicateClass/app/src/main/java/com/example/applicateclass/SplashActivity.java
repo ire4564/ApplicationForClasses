@@ -14,12 +14,12 @@ public class SplashActivity extends Activity {
         setContentView(R.layout.activity_loading);
 
         Handler handler = new Handler();
-        handler.postDelayed(new splashhandler(), 4000);
+        handler.postDelayed(new splashhandler(), 2000);
     }
 
     private class splashhandler implements Runnable {
         public void run() {
-            startActivity(new Intent(getApplication(), MainActivity.class)); //로딩후 페이지 이동
+            startActivity(new Intent(getApplication(), SelectGradeActivity.class)); //로딩후 페이지 이동
             SplashActivity.this.finish(); //로딩페이지 activity stack에서 제거
         }
     }
