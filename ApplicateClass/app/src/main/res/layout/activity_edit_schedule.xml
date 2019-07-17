@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="40dp"
+                android:background="@drawable/finger"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="7dp"
+                android:text="다른 시간표를 보려면 뒤로가기를 눌러주세요."
+                android:textColor="@color/purpleColor"
+                android:textSize="14dp"
+                android:fontFamily="@font/scdream3"/>
+            
+        </LinearLayout>
+
+
+        <com.example.applicateclass.TimeTable.CustomTimeTable
+            android:id="@+id/edit_schedule_main_table"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="0.9"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/edit_schedule_underTab"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/rounded_orange"
+                android:text="수업 추가"
+                android:textSize="13dp"
+                android:textColor="#7c57c2"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -18,7 +18,6 @@ import java.util.Random;
 
 public class CustomOneLine extends LinearLayout {
     private ArrayList<CustomTimeItem> ac_TableTimeItems = new ArrayList<>();
-    private int[][] timeTable= new int[14][2];
 
     public CustomOneLine(Context context) {
         super(context);
@@ -66,7 +65,7 @@ public class CustomOneLine extends LinearLayout {
 
     }
 
-    public boolean addTime(String title, String sub,CustomTimeset item){
+    public boolean addTime(String title, String sub,CustomTimeset item, int color){
         int startTime = item.getStartTime();
         int endTime = item.getEndTime();
 
@@ -84,26 +83,49 @@ public class CustomOneLine extends LinearLayout {
         }
 
         Log.e("asd",startTime+" "+endTime+" "+ ac_TableTimeItems.get(startTime));
-        ac_TableTimeItems.get(startTime).setTableItem(title, sub, false , Color.parseColor("#a1a1a1"));
+        ac_TableTimeItems.get(startTime).setTableItem(title, sub, false , color);
         for(int i = startTime+1; i < endTime; ++i)
-            ac_TableTimeItems.get(i).setTableItem("", "", false , Color.parseColor("#a1a1a1"));
-        ac_TableTimeItems.get(endTime).setTableItem("", "", true , Color.parseColor("#a1a1a1"));
+            ac_TableTimeItems.get(i).setTableItem("", "", false , color);
+        ac_TableTimeItems.get(endTime).setTableItem("", "", true ,color);
 
 
 
         return true;
     }
 
+    public void removeTime(CustomTimeset target){
+        int startTime = target.getStartTime();
+        int endTime = target.getEndTime();
+
+        int startFront  = (startTime-900) / 100;
+        int startTail   = (startTime-900) % 100 > 0 ? 1 : 0;
+        int endFront    = (endTime-900) / 100;
+        int endTail     = (endTime-900) % 100 > 0 ? 1 : 0;
+
+        startTime = startFront * 2 + startTail;
+        endTime = endFront  * 2 + endTail;
+
+        for(int i = startTime; i <= endTime; ++i)
+            ac_TableTimeItems.get(i).removeItem();
+
+
+
+
+    }
+
     public void setStandard(){
         for(int i =0; i<ac_TableTimeItems.size(); ++i){
+            ac_TableTimeItems.get(i).setTextColor(getResources().getColor(R.color.buttonText));
             if(i % 2 == 0 )
-                ac_TableTimeItems.get(i).setTableItem(((i/2+9)+"시"),"",false,Color.parseColor("#ffffff"));
+                ac_TableTimeItems.get(i).setTableItem(((i/2+9)+""),"",false,getResources().getColor(R.color.timetableBack));
             else
-                ac_TableTimeItems.get(i).setTableItem("","",true,Color.parseColor("#ffffff"));
+                ac_TableTimeItems.get(i).setTableItem("","",true,getResources().getColor(R.color.timetableBack));
 
         }
 
     }
+
+
 
 
 }
