@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1."
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/talk_box"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <!--talk box-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                android:src="@drawable/down_arrow"/>
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시간표가\n생성되었습니다"
+                android:textColor="@color/originText"
+                android:fontFamily="@font/scdream5"
+                android:textSize="35dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- messages -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:gravity="center">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text= "생성된 3개의 대안 시간표를 보고\n마음에 드는 시간표를 담아보세요."
+            android:textColor="#fff"
+            android:fontFamily="@font/scdream3"
+            android:textSize="18dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.4"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            app:text="어떻게든 지옥 시간표">
+        </com.example.applicateclass.CustomView.CustomSelectBtn>
+
+        <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            app:text="전공 부자 시간표">
+        </com.example.applicateclass.CustomView.CustomSelectBtn>
+
+        <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            app:text="인생은 마이웨이 시간표">
+        </com.example.applicateclass.CustomView.CustomSelectBtn>
+    </LinearLayout>
+
+
+</LinearLayout>
