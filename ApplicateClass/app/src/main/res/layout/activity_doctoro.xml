@@ -54,6 +54,7 @@
                 android:src="@drawable/down_arrow" />
 
             <TextView
+                android:id="@+id/docotoro_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -79,12 +80,14 @@
         android:gravity="center">
 
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/doctoro_auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:text = "자동 생성">
         </com.example.applicateclass.CustomView.CustomSelectBtn>
 
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/doctoro_direct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:text = "수동 생성"

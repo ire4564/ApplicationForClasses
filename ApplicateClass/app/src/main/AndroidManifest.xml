@@ -18,6 +18,12 @@
         </activity>
         <activity android:name=".MainActivity"/>
         <activity android:name=".SelectGradeActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".DoctoroActivity"/>
+        <activity android:name=".CompleteActivity"/>
+        <activity android:name=".HowMuchActivity"/>
+        <activity android:name=".RestDayActivity"/>
+        <activity android:name=".SelectTimeSetActivity"/>
 
     </application>
 

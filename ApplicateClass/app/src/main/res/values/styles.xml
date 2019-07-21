@@ -8,8 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-
-
+        <!-- status bar color-->
+        <item name="android:statusBarColor">#3F51B5</item>
     </style>
 
 </resources>

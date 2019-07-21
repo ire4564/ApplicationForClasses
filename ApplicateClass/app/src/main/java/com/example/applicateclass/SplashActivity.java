@@ -19,7 +19,8 @@ public class SplashActivity extends Activity {
 
     private class splashhandler implements Runnable {
         public void run() {
-            startActivity(new Intent(getApplication(), SelectGradeActivity.class)); //로딩후 페이지 이동
+            startActivity(new Intent(getApplication(), LoginActivity.class)); //로딩후 페이지 이동
+            overridePendingTransition(0, R.anim.fadeout);
             SplashActivity.this.finish(); //로딩페이지 activity stack에서 제거
         }
     }

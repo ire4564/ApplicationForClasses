@@ -65,7 +65,7 @@
         android:gravity="center"
         android:layout_weight="4.7">
         <com.example.applicateclass.CustomView.CustomSelectBtn
-            android:id="@+id/grade_gradeBtn1"
+            android:id="@+id/grade_grade1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
@@ -75,7 +75,7 @@
 
         </com.example.applicateclass.CustomView.CustomSelectBtn>
         <com.example.applicateclass.CustomView.CustomSelectBtn
-            android:id="@+id/grade_gradeBtn2"
+            android:id="@+id/grade_grade2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
@@ -86,7 +86,7 @@
         </com.example.applicateclass.CustomView.CustomSelectBtn>
 
         <com.example.applicateclass.CustomView.CustomSelectBtn
-            android:id="@+id/grade_gradeBtn3"
+            android:id="@+id/grade_grade3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
@@ -97,7 +97,7 @@
         </com.example.applicateclass.CustomView.CustomSelectBtn>
 
         <com.example.applicateclass.CustomView.CustomSelectBtn
-            android:id="@+id/grade_gradeBtn4"
+            android:id="@+id/grade_grade4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"

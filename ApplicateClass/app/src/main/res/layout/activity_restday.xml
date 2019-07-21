@@ -79,36 +79,42 @@
         android:layout_marginRight="20dp">
 
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/restday_mon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:text = "월요일"
         android:layout_marginBottom="10dp">
     </com.example.applicateclass.CustomView.CustomSelectBtn>
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/restday_tue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:text = "화요일"
             android:layout_marginBottom="10dp">
         </com.example.applicateclass.CustomView.CustomSelectBtn>
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/restday_wed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:text = "수요일"
             android:layout_marginBottom="10dp">
         </com.example.applicateclass.CustomView.CustomSelectBtn>
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/restday_thr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:text = "목요일"
             android:layout_marginBottom="10dp">
         </com.example.applicateclass.CustomView.CustomSelectBtn>
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/restday_fri"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:text = "금요일"
             android:layout_marginBottom="10dp">
         </com.example.applicateclass.CustomView.CustomSelectBtn>
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/restday_ok"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:text = "괜찮아요"

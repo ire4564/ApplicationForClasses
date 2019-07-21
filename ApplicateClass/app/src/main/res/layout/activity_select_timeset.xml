@@ -80,12 +80,14 @@
         android:gravity="center">
 
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/timeset_am"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:text = "낮이밤져(낮)">
         </com.example.applicateclass.CustomView.CustomSelectBtn>
 
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/timeset_noting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:text = "둘 다 이긴다(상관 없음)"
@@ -93,6 +95,7 @@
         </com.example.applicateclass.CustomView.CustomSelectBtn>
 
         <com.example.applicateclass.CustomView.CustomSelectBtn
+            android:id="@+id/timeset_pm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:text = "밤이낮져(밤)"
