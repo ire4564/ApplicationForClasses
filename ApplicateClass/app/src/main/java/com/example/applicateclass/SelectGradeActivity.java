@@ -1,6 +1,7 @@
 package com.example.applicateclass;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicateclass.CustomView.CustomSelectBtn;
 
 public class SelectGradeActivity extends AppCompatActivity {
+    public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
+    public String grade1_key = "grade1_key";
+    public String grade2_key = "grade2_key";
+    public String grade3_key = "grade3_key";
+    public String grade4_key = "grade4_key";
+    private boolean isBoolean = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +29,7 @@ public class SelectGradeActivity extends AppCompatActivity {
         Grade1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setPreference(grade1_key, !isBoolean); //true
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
@@ -35,6 +43,7 @@ public class SelectGradeActivity extends AppCompatActivity {
         Grade2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setPreference(grade2_key, !isBoolean); //true
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
@@ -48,6 +57,7 @@ public class SelectGradeActivity extends AppCompatActivity {
         Grade3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setPreference(grade3_key, !isBoolean); //true
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
@@ -61,6 +71,7 @@ public class SelectGradeActivity extends AppCompatActivity {
         Grade4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setPreference(grade4_key, !isBoolean); //true
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
@@ -68,6 +79,13 @@ public class SelectGradeActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             }
         });
+    }
+
+    public void setPreference(String key, boolean value){ //데이터 저장 함수
+        SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean(key, value);
+        editor.commit();
     }
 
 }

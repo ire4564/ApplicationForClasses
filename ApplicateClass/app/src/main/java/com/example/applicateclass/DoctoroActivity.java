@@ -4,17 +4,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Button;
-
 import com.example.applicateclass.CustomView.CustomSelectBtn;
 
 public class DoctoroActivity extends AppCompatActivity {
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
-    public String auto_key = "false";
-    public String direct_key = "false";
+    public String auto_key = "auto_key";
+    public String direct_key = "direct_key";
+    private boolean isBoolean = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +28,13 @@ public class DoctoroActivity extends AppCompatActivity {
         auto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setPreference(auto_key, "true");
-                result.setText("Test Complete! " + getPerference(auto_key) +  " " +  getPerference(direct_key));
-            /*   Intent intent = new Intent(
+                setPreference(auto_key, !isBoolean); //true
+                setPreference(direct_key, isBoolean); //false
+              Intent intent = new Intent(
                         getApplicationContext(),
                         SelectGradeActivity.class);
-                startActivity(intent);*/
+                startActivity(intent);
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -43,8 +42,9 @@ public class DoctoroActivity extends AppCompatActivity {
         direct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setPreference(direct_key, "true");
-               // result.setText("Test Complete! " + getPerference(direct_key));
+                setPreference(direct_key, !isBoolean); //true
+                setPreference(auto_key, isBoolean); //false
+           //    result.setText("Test Complete! " + getPerferenceBoolean(direct_key) + " " + getPerferenceBoolean(auto_key));
               Intent intent = new Intent(
                         getApplicationContext(),
                         SelectGradeActivity.class);
@@ -54,16 +54,16 @@ public class DoctoroActivity extends AppCompatActivity {
         });
     }
 
-public void setPreference(String key, String value){ //데이터 저장 함수
+public void setPreference(String key, boolean value){ //데이터 저장 함수
     SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
     SharedPreferences.Editor editor = pref.edit();
-    editor.putString(key, value);
+    editor.putBoolean(key, value);
     editor.commit();
     }
 
-public String getPerference(String key) { //데이터 불러오기(확인용)
+    public boolean getPerferenceBoolean(String key) { //데이터 불러오기(확인용)
         SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
-        return pref.getString(key,"");
+        return pref.getBoolean(key,false);
     }
 
 }
