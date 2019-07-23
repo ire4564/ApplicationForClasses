@@ -8,20 +8,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 import com.example.applicateclass.CustomView.CustomSelectBtn;
 
-public class DoctoroActivity extends AppCompatActivity {
-    public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
-    public String auto_key = "auto_key";
-    public String direct_key = "direct_key";
-    private boolean isBoolean = false;
+    public class DoctoroActivity extends AppCompatActivity {
+        public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
+        public String auto_key = "auto_key";
+        public String direct_key = "direct_key";
+        private boolean isBoolean = false;
 
-    @Override
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctoro);
 
         //data Test
-        final TextView result = (TextView)findViewById(R.id.docotoro_test);
+        //final TextView result = (TextView)findViewById(R.id.docotoro_test);
 
         //Select auto and direct
         CustomSelectBtn auto = (CustomSelectBtn) findViewById(R.id.doctoro_auto);
@@ -33,6 +33,8 @@ public class DoctoroActivity extends AppCompatActivity {
               Intent intent = new Intent(
                         getApplicationContext(),
                         SelectGradeActivity.class);
+                intent.putExtra("test1", getPerferenceBoolean(direct_key)); //키 확인
+                intent.putExtra("test2", getPerferenceBoolean(auto_key)); //키확인
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -48,10 +50,13 @@ public class DoctoroActivity extends AppCompatActivity {
               Intent intent = new Intent(
                         getApplicationContext(),
                         SelectGradeActivity.class);
+              intent.putExtra("test1", getPerferenceBoolean(direct_key)); //키확인
+              intent.putExtra("test2", getPerferenceBoolean(auto_key)); //키확인
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
         });
+
     }
 
 public void setPreference(String key, boolean value){ //데이터 저장 함수
@@ -64,6 +69,14 @@ public void setPreference(String key, boolean value){ //데이터 저장 함수
     public boolean getPerferenceBoolean(String key) { //데이터 불러오기(확인용)
         SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
         return pref.getBoolean(key,false);
+    }
+
+    @Override
+    public void onBackPressed() { //화면에서 뒤로가기를 눌렀을 때 변수 초기화
+         auto_key = "auto_key";
+         direct_key = "direct_key";
+        super.onBackPressed();
+        overridePendingTransition(0, 0);
     }
 
 }

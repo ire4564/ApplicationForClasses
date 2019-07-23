@@ -122,4 +122,16 @@ public class RestDayActivity extends AppCompatActivity {
         editor.putBoolean(key, value);
         editor.commit();
     }
+
+    @Override
+    public void onBackPressed() { //화면에서 뒤로가기를 눌렀을 때 변수 초기화
+        mon_key = "mon_key";
+        tue_key = "tue_key";
+        wed_key = "wed_key";
+        thr_key = "thr_key";
+        fri_key = "fri_key";
+        noting_key = "noting_key";
+        super.onBackPressed();
+        overridePendingTransition(0, 0);
+    }
 }

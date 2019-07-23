@@ -68,6 +68,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:inputType="number"
                 android:id="@+id/howmuch_writescore"
                 android:layout_width="180dp"
                 android:layout_height="30dp"

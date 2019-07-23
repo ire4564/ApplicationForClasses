@@ -74,4 +74,13 @@ public class SelectTimeSetActivity extends AppCompatActivity {
         editor.putBoolean(key, value);
         editor.commit();
     }
+
+    @Override
+    public void onBackPressed() { //화면에서 뒤로가기를 눌렀을 때 변수 초기화
+        am_key = "am_key";
+        pm_key = "pm_key";
+        anytime_key = "anytime_key";
+        super.onBackPressed();
+        overridePendingTransition(0, 0);
+    }
 }

@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
 import com.example.applicateclass.CustomView.WhiteBtn;
 
 public class LoginActivity extends AppCompatActivity {
+    private BackPressCloseHandler backPressCloseHandler;
+    private long lastTimeBackPressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,5 +40,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onBackPressed() { //화면에서 뒤로가기 방지
+        //super.onBackPressed();
+        if(System.currentTimeMillis() - lastTimeBackPressed < 2000){
+            finish();
+            return;
+        }
+        Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
+        lastTimeBackPressed = System.currentTimeMillis();
     }
 }

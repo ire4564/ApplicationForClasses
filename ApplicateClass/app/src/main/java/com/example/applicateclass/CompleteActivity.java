@@ -57,6 +57,10 @@ public class CompleteActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    @Override
+    public void onBackPressed() { //화면에서 뒤로가기 방지
+        //super.onBackPressed();
     }
 }
