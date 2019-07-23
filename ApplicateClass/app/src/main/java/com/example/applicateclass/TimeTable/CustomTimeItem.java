@@ -2,6 +2,7 @@ package com.example.applicateclass.TimeTable;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -96,6 +97,14 @@ public class CustomTimeItem extends LinearLayout {
 
     }
 
+    public void removeItem(){
+        tvTitle.setText("");
+        tvSub.setText("");
+        ivDivideLine.setVisibility(View.VISIBLE);
+        background.setBackgroundColor(getResources().getColor(R.color.timetableBack));
+        isFull = false;
+    }
+
     public Boolean getFull() {
         return isFull;
     }
@@ -105,5 +114,9 @@ public class CustomTimeItem extends LinearLayout {
             ivDivideLine.setVisibility(View.GONE);
         else
             ivDivideLine.setVisibility(View.VISIBLE);
+    }
+
+    public void setTextColor(int color){
+        tvTitle.setTextColor(color);
     }
 }

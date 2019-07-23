@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/tableAllSize"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="@dimen/tableAllSize">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -20,287 +21,253 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+
+                >
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item5"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item6"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item7"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item8"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item9"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item10"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item11"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item12"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true"></com.example.applicateclass.TimeTable.CustomTimeItem>
 
-            </com.example.applicateclass.TimeTable.CustomTimeItem>
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item13"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item14"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item15"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item16"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item17"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true"></com.example.applicateclass.TimeTable.CustomTimeItem>
 
-            </com.example.applicateclass.TimeTable.CustomTimeItem>
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item18"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item19"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item20"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item21"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item22"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item23"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item24"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true"></com.example.applicateclass.TimeTable.CustomTimeItem>
 
-            </com.example.applicateclass.TimeTable.CustomTimeItem>
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item25"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true"></com.example.applicateclass.TimeTable.CustomTimeItem>
 
-            </com.example.applicateclass.TimeTable.CustomTimeItem>
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item26"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item27"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="false"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="false">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
+
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item28"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
 
         </LinearLayout>
+
         <ImageView
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/divideLine"/>
+            android:background="@color/divideLine" />
     </LinearLayout>
 
 </RelativeLayout>
