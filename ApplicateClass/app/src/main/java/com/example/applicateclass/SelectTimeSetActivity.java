@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicateclass.CustomView.CustomSelectBtn;
@@ -15,12 +16,22 @@ public class SelectTimeSetActivity extends AppCompatActivity {
     public String pm_key = "pm_key";
     public String anytime_key = "anytime_key";
     private boolean isBoolean = false;
+    int Write, Grade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_timeset);
+
+
+        /**********Write는 학점으로 Int형으로 표현하여 정보를 저장한다*******************/
+
+        Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
+        Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
+        Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
+      // TextView testdata = (TextView) findViewById(R.id.timeset_test) ; //테스트용 전환
+      //   testdata.setText("Grade:" + Grade + " "+ "score: " +Write);
 
         //am Button
         final CustomSelectBtn am = (CustomSelectBtn) findViewById(R.id.timeset_am);
@@ -32,6 +43,9 @@ public class SelectTimeSetActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         RestDayActivity.class);
+                intent.putExtra("am_key", getPerferenceBoolean(am_key)); //정보전송 -> 오전 true
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -47,6 +61,9 @@ public class SelectTimeSetActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         RestDayActivity.class);
+                intent.putExtra("pm_key", getPerferenceBoolean(pm_key)); //정보전송 -> 오후 true
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -62,6 +79,9 @@ public class SelectTimeSetActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         RestDayActivity.class);
+                intent.putExtra("anytime_key", getPerferenceBoolean(anytime_key)); //정보전송 -> 상관없음 true
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -73,6 +93,11 @@ public class SelectTimeSetActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = pref.edit();
         editor.putBoolean(key, value);
         editor.commit();
+    }
+
+    public boolean getPerferenceBoolean(String key) { //데이터 불러오기(확인용)
+        SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
+        return pref.getBoolean(key,false);
     }
 
     @Override

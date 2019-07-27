@@ -29,12 +29,11 @@ import com.example.applicateclass.CustomView.CustomSelectBtn;
             @Override
             public void onClick(View view) {
                 setPreference(auto_key, !isBoolean); //true
-                setPreference(direct_key, isBoolean); //false
-              Intent intent = new Intent(
+
+              Intent intent = new Intent( //화면 전환
                         getApplicationContext(),
                         SelectGradeActivity.class);
-                intent.putExtra("test1", getPerferenceBoolean(direct_key)); //키 확인
-                intent.putExtra("test2", getPerferenceBoolean(auto_key)); //키확인
+                intent.putExtra("auto_key", getPerferenceBoolean(auto_key)); //키확인
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -45,14 +44,11 @@ import com.example.applicateclass.CustomView.CustomSelectBtn;
             @Override
             public void onClick(View view) {
                 setPreference(direct_key, !isBoolean); //true
-                setPreference(auto_key, isBoolean); //false
-           //    result.setText("Test Complete! " + getPerferenceBoolean(direct_key) + " " + getPerferenceBoolean(auto_key));
-              Intent intent = new Intent(
+
+              Intent intent = new Intent( //화면 전환 (바로 시간표 만들기로 전환)
                         getApplicationContext(),
-                        SelectGradeActivity.class);
-              intent.putExtra("test1", getPerferenceBoolean(direct_key)); //키확인
-              intent.putExtra("test2", getPerferenceBoolean(auto_key)); //키확인
-                startActivity(intent);
+                        MainActivity.class);
+                startActivity(intent); //다음 화면으로
                 overridePendingTransition(0, 0);
             }
         });

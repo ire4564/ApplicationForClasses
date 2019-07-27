@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,11 +20,46 @@ public class RestDayActivity extends AppCompatActivity {
     public String noting_key = "noting_key";
     private boolean isBoolean = false;
 
+    int Write, Grade;
+    int TimeSet;
+    String TimeSelect[] = new String[3];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restday);
+
+        /**********TimeSet 시간대 선택(오전, 오후, 상관없음)으로 Int형으로 오전:1 오후:2 상관없음:0 표현하여 정보를 저장한다*******************/
+        //계속 가지고 있는 정보
+        Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
+        Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
+        Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
+
+        //새로 받은 키
+        Boolean am_key = intent_info.getExtras().getBoolean("am_key");
+        Boolean pm_key= intent_info.getExtras().getBoolean("pm_key");
+        Boolean anytime_key= intent_info.getExtras().getBoolean("anytime_key");
+
+        //true인 값 걸러내기
+        TimeSelect[0] = String.valueOf(am_key);
+        TimeSelect[1] = String.valueOf(pm_key);
+        TimeSelect[2] = String.valueOf(anytime_key);
+
+        for(int i=0; i<3; i++){
+            if(TimeSelect[i] == "true"){
+                if(i == 0){ //오전
+                    TimeSet = 1;
+                } else if(i == 1){ //오후
+                    TimeSet = 2;
+                } else if(i == 2){ ///상관없음
+                    TimeSet = 0;
+                }
+            }
+        }
+
+       // TextView testdata = (TextView) findViewById(R.id.restday_test) ; //테스트용 전환
+       // testdata.setText("Grade:" + Grade + " "+ "score: " +Write + " "+ "TimeSet: " +TimeSet);
 
         //mon Button
         CustomSelectBtn mon = (CustomSelectBtn) findViewById(R.id.restday_mon);
@@ -35,6 +71,10 @@ public class RestDayActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         CompleteActivity.class);
+                intent.putExtra("mon_key", getPerferenceBoolean(mon_key)); //정보전송 ->  월
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -50,6 +90,10 @@ public class RestDayActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         CompleteActivity.class);
+                intent.putExtra("tue_key", getPerferenceBoolean(tue_key)); //정보전송 ->  화
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -65,6 +109,10 @@ public class RestDayActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         CompleteActivity.class);
+                intent.putExtra("wed_key", getPerferenceBoolean(wed_key)); //정보전송 ->  수
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -80,6 +128,10 @@ public class RestDayActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         CompleteActivity.class);
+                intent.putExtra("thr_key", getPerferenceBoolean(thr_key)); //정보전송 ->  목
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -95,6 +147,10 @@ public class RestDayActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         CompleteActivity.class);
+                intent.putExtra("fri_key", getPerferenceBoolean(fri_key)); //정보전송 ->  금
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -110,6 +166,10 @@ public class RestDayActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         CompleteActivity.class);
+                intent.putExtra("noting_key", getPerferenceBoolean(noting_key)); //정보전송 ->  공강해당없음
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -121,6 +181,11 @@ public class RestDayActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = pref.edit();
         editor.putBoolean(key, value);
         editor.commit();
+    }
+
+    public boolean getPerferenceBoolean(String key) { //데이터 불러오기(확인용)
+        SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
+        return pref.getBoolean(key,false);
     }
 
     @Override

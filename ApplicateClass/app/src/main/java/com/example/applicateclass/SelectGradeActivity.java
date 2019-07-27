@@ -25,13 +25,12 @@ public class SelectGradeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grade);
 
-        /*******************
-        Intent intent = getIntent(); //데이터 수신 확인
-        Boolean test1 = intent.getExtras().getBoolean("test1"); //direct
-        Boolean test2 = intent.getExtras().getBoolean("test2"); //auto
-        TextView testdata = (TextView) findViewById(R.id.grad_what) ; //테스트용 전환
-        testdata.setText("direct key:" +test1 + " "+ "auto key: " +test2);
-        *********************/
+        Intent intent_info = getIntent(); //데이터 수신 확인 (그런데 시간표 자동 수동 선택하는 건 굳이 정보를 넘겨주지 않아도 되므로 예시 사용/실사용 패스해도 됨)
+        Boolean auto_key = intent_info.getExtras().getBoolean("auto_key");
+        Boolean direct_key= intent_info.getExtras().getBoolean("direct_key");
+
+     //   TextView testdata = (TextView) findViewById(R.id.grad_what) ; //테스트용 전환
+      //  testdata.setText("direct key:" +direct_key + " "+ "auto key: " +auto_key);
 
         //Select Grade1 Button
         CustomSelectBtn Grade1 = (CustomSelectBtn) findViewById(R.id.grade_grade1);
@@ -42,6 +41,7 @@ public class SelectGradeActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
+                intent.putExtra("grade1_key", getPerferenceBoolean(grade1_key)); //정보 넘겨주기
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -56,6 +56,7 @@ public class SelectGradeActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
+                intent.putExtra("grade2_key", getPerferenceBoolean(grade2_key)); //정보 넘겨주기
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -70,6 +71,7 @@ public class SelectGradeActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
+                intent.putExtra("grade3_key", getPerferenceBoolean(grade3_key)); //정보 넘겨주기
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -84,6 +86,7 @@ public class SelectGradeActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
+                intent.putExtra("grade4_key", getPerferenceBoolean(grade4_key)); //정보 넘겨주기
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
