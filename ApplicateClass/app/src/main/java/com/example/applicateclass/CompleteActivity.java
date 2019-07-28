@@ -3,12 +3,24 @@ package com.example.applicateclass;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicateclass.CustomView.CustomSelectBtn;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CompleteActivity extends AppCompatActivity {
@@ -16,6 +28,7 @@ public class CompleteActivity extends AppCompatActivity {
     private long lastTimeBackPressed;
     int Write, Grade, TimeSet, RestDay;
     String Days[] = new String[6];
+    private List<Subject> subjects = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +75,22 @@ public class CompleteActivity extends AppCompatActivity {
             }
         }
 
+        DatabaseReference myref = FirebaseDatabase.getInstance().getReference("Col1");
+        myref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+               showData(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        Log.v("데이터확인", "학점"+String.valueOf(Write));
+        Log.v("데이터확인", "학년"+String.valueOf(Grade));
+        Log.v("데이터확인", "시간대"+String.valueOf(TimeSet));
+        Log.v("데이터확인", "공강"+String.valueOf(RestDay));
         /**********************
          *
          * 정보 받아오기 완료
@@ -125,7 +154,15 @@ public class CompleteActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
         return pref.getBoolean(key,false);
     }
-
+    private void showData(DataSnapshot dataSnapshot){
+       for (DataSnapshot keys : dataSnapshot.getChildren()){
+           Subject subject = keys.getValue(Subject.class);
+           subjects.add(subject);
+           Log.v("데이터", String.valueOf(subject.getName()));
+       }
+       subjects.size();
+        Log.v("데이터", String.valueOf(subjects.size()));
+    }
     @Override
     public void onBackPressed() { //화면에서 경고 메세지 띄우고 뒤로 가기
         //super.onBackPressed();
