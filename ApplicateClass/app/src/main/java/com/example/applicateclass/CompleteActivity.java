@@ -3,22 +3,20 @@ package com.example.applicateclass;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicateclass.CustomView.CustomSelectBtn;
+import com.example.applicateclass.TimeTable.CustomScheduleItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +26,7 @@ public class CompleteActivity extends AppCompatActivity {
     private long lastTimeBackPressed;
     int Write, Grade, TimeSet, RestDay;
     String Days[] = new String[6];
-    private List<Subject> subjects = new ArrayList<>();
+    private List<CustomScheduleItem> subjects = new ArrayList<CustomScheduleItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +73,7 @@ public class CompleteActivity extends AppCompatActivity {
             }
         }
 
-        DatabaseReference myref = FirebaseDatabase.getInstance().getReference("Col1");
+        DatabaseReference myref = FirebaseDatabase.getInstance().getReference("all");
         myref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -156,9 +154,9 @@ public class CompleteActivity extends AppCompatActivity {
     }
     private void showData(DataSnapshot dataSnapshot){
        for (DataSnapshot keys : dataSnapshot.getChildren()){
-           Subject subject = keys.getValue(Subject.class);
-           subjects.add(subject);
-           Log.v("데이터", String.valueOf(subject.getName()));
+           CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
+           subjects.add(customScheduleItem);
+           Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
        }
        subjects.size();
         Log.v("데이터", String.valueOf(subjects.size()));
