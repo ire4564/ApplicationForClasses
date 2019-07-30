@@ -1,6 +1,7 @@
 package com.example.applicateclass.TimeTable;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -10,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.example.applicateclass.R;
 
@@ -19,8 +23,8 @@ public class CustomTimeItem extends LinearLayout {
     private TextView        tvSub;
     private ImageView       ivDivideLine;
     private LinearLayout    background;
-
-
+    private CustomScheduleItem scheduleItem;
+    private CustomTimeTable timeTable;
 
     public CustomTimeItem(Context context) {
         super(context);
@@ -50,7 +54,36 @@ public class CustomTimeItem extends LinearLayout {
         background = (LinearLayout)v.findViewById(R.id.tableItem_background);
         isFull = false;
 
+        background.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                final AlertDialog.Builder oDialog = new AlertDialog.Builder(getContext(), android.R.style.Theme_DeviceDefault_Light_Dialog);
 
+                oDialog.setMessage("앱을 종료하시겠습니까?")
+                        .setTitle("일반 Dialog")
+                        .setNeutralButton("삭제", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                timeTable.removeSchedule(scheduleItem);
+                                dialog.dismiss();
+                            }
+                        })
+                        .setPositiveButton("닫기", new DialogInterface.OnClickListener()
+                        {
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                dialog.dismiss();
+                            }
+                        })
+                        .setCancelable(false) // 백버튼으로 팝업창이 닫히지 않도록 한다.
+
+
+                        .show();
+                return true;
+            }
+        });
 
     }
 
@@ -82,8 +115,7 @@ public class CustomTimeItem extends LinearLayout {
 
     }
 
-    public void setTableItem(String title, String sub, boolean visible ,int color){
-        Log.e("asd","inserted");
+    public void setTableItem(String title, String sub, boolean visible ,int color,boolean isFull,CustomScheduleItem scheduleItem){
         tvTitle.setText(title);
         tvSub.setText(sub);
 
@@ -92,8 +124,8 @@ public class CustomTimeItem extends LinearLayout {
         else
             ivDivideLine.setVisibility(View.VISIBLE);
         background.setBackgroundColor(color);
-        isFull = true;
-
+        this.isFull = isFull;
+        this.scheduleItem = scheduleItem;
     }
 
     public Boolean getFull() {
@@ -106,4 +138,18 @@ public class CustomTimeItem extends LinearLayout {
         else
             ivDivideLine.setVisibility(View.VISIBLE);
     }
+
+    public void setScheduleItem(CustomScheduleItem scheduleItem) {
+        this.scheduleItem = scheduleItem;
+    }
+
+    public CustomScheduleItem getScheduleItem() {
+        return scheduleItem;
+    }
+
+    public void setTimeTable(CustomTimeTable timeTable) {
+        this.timeTable = timeTable;
+    }
+
+
 }
