@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.applicateclass.CustomView.CustomSelectBtn;
 import com.example.applicateclass.TimeTable.CustomScheduleItem;
+import com.example.applicateclass.TimeTable.CustomTimeset;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -27,6 +29,10 @@ public class CompleteActivity extends AppCompatActivity {
     int Write, Grade, TimeSet, RestDay;
     String Days[] = new String[6];
     private List<CustomScheduleItem> subjects = new ArrayList<CustomScheduleItem>();
+    private List<CustomScheduleItem> essential_subjects = new ArrayList<>();
+    private List<CustomScheduleItem> first_subjects = new ArrayList<>();
+    private List<CustomScheduleItem> second_subjects = new ArrayList<>();
+    private List<CustomScheduleItem> third_subjects = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,11 +79,13 @@ public class CompleteActivity extends AppCompatActivity {
             }
         }
 
-        DatabaseReference myref = FirebaseDatabase.getInstance().getReference("all");
+        DatabaseReference myref = FirebaseDatabase.getInstance().getReference(String.valueOf(Grade));
         myref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-               showData(dataSnapshot);
+
+                showData(dataSnapshot);
+                istimeavailable(subjects);
             }
 
             @Override
@@ -148,6 +156,8 @@ public class CompleteActivity extends AppCompatActivity {
 
     }
 
+
+
     public boolean getPerferenceBoolean(String key) { //데이터 불러오기(확인용)
         SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
         return pref.getBoolean(key,false);
@@ -175,4 +185,42 @@ public class CompleteActivity extends AppCompatActivity {
         Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 기존에 생성된 시간표가 사라집니다.", Toast.LENGTH_SHORT).show();
         lastTimeBackPressed = System.currentTimeMillis();
     }
+
+    private void istimeavailable(List<CustomScheduleItem> subjects) {
+        Iterator<CustomScheduleItem> item = subjects.iterator();
+        while(item.hasNext()){
+            CustomScheduleItem scheduleItem = item.next();
+            if ( !checktimelist(scheduleItem,TimeSet,RestDay)){
+                item.remove();
+            }
+        }
+        subjects.size();
+
+    }
+
+    private boolean checktimelist(CustomScheduleItem subject, int timeSet ,int restDay) {
+        ArrayList<CustomTimeset> timelist = subject.getTimelist();
+        for(int i=0; i<timelist.size();i++){
+            CustomTimeset time = timelist.get(i);
+            if(timeSet ==1 && (time.getStartTime()>=1300 || restDay==time.getDay())){
+                return false;
+            }
+            else if( timeSet ==2 && (time.getStartTime()<=1200 || restDay==time.getDay())){
+                return false;
+            }
+            else {
+                if( timeSet==0 && restDay==time.getDay()){
+                    return false;
+                }
+            }
+        }
+        if(!isaddtosubjects(essential_subjects,subject)){
+            return false;
+        }
+        return true;
+
+    }
+
+    
+
 }
