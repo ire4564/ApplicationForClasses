@@ -221,6 +221,24 @@ public class CompleteActivity extends AppCompatActivity {
 
     }
 
-    
+    private boolean isaddtosubjects(List<CustomScheduleItem> essential_subjects, CustomScheduleItem addsubject) {
+
+        for (int i=0; i<essential_subjects.size();i++){
+            CustomScheduleItem subject = essential_subjects.get(i);
+            ArrayList<CustomTimeset> timesets = subject.getTimelist();
+            for (int j=0; j<timesets.size();j++){
+                CustomTimeset timeset = timesets.get(j);
+                ArrayList<CustomTimeset> addsubject_list = addsubject.getTimelist();
+                for (int k=0; k<addsubject_list.size();k++){
+                    CustomTimeset addsubject_timeset = addsubject_list.get(k);
+                    if(( timeset.getStartTime()<=addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime()<=timeset.getEndTime())
+                            || (addsubject_timeset.getStartTime()<=timeset.getEndTime() && timeset.getStartTime()<=addsubject_timeset.getStartTime())){
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 
 }
