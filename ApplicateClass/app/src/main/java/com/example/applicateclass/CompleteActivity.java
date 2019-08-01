@@ -29,6 +29,7 @@ public class CompleteActivity extends AppCompatActivity {
     int Write, Grade, TimeSet, RestDay;
     String Days[] = new String[6];
     private List<CustomScheduleItem> subjects = new ArrayList<CustomScheduleItem>();
+    private List<CustomScheduleItem> culturesubjects = new ArrayList<CustomScheduleItem>();
     private List<CustomScheduleItem> essential_subjects = new ArrayList<>();
     private List<CustomScheduleItem> first_subjects = new ArrayList<>();
     private List<CustomScheduleItem> second_subjects = new ArrayList<>();
@@ -79,13 +80,24 @@ public class CompleteActivity extends AppCompatActivity {
             }
         }
 
-        DatabaseReference myref = FirebaseDatabase.getInstance().getReference(String.valueOf(Grade));
+        DatabaseReference myref = FirebaseDatabase.getInstance().getReference();
         myref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                showData(dataSnapshot);
+                for(DataSnapshot keys : dataSnapshot.getChildren()){
+                    if(keys.getKey().equals(String.valueOf(Grade))){
+                        showData(keys);
+                    }
+                    if (keys.getKey().equals(String.valueOf(0))){
+                        showCultureData(keys);
+                    }
+                }
+                //showData(dataSnapshot);
                 istimeavailable(subjects);
+                istimeavailable(culturesubjects);
+                culturesubjects.size();
+                subjects.addAll(culturesubjects);
+
             }
 
             @Override
@@ -168,8 +180,13 @@ public class CompleteActivity extends AppCompatActivity {
            subjects.add(customScheduleItem);
            Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
        }
-       subjects.size();
-        Log.v("데이터", String.valueOf(subjects.size()));
+    }
+    private void showCultureData(DataSnapshot dataSnapshot){
+        for (DataSnapshot keys : dataSnapshot.getChildren()){
+            CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
+            culturesubjects.add(customScheduleItem);
+            Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
+        }
     }
     @Override
     public void onBackPressed() { //화면에서 경고 메세지 띄우고 뒤로 가기
