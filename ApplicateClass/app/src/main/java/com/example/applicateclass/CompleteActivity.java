@@ -98,7 +98,11 @@ public class CompleteActivity extends AppCompatActivity {
                 istimeavailable(culturesubjects);
                 culturesubjects.size();
                 subjects.addAll(culturesubjects);
-
+                Write -= essential_subjects_credit;
+                make_timetable(Write);
+                first_subjects.size();
+                second_subjects.size();
+                third_subjects.size();
             }
 
             @Override
@@ -168,6 +172,7 @@ public class CompleteActivity extends AppCompatActivity {
         });
 
     }
+
 
 
     public boolean getPerferenceBoolean(String key) { //데이터 불러오기(확인용)
@@ -252,6 +257,7 @@ public class CompleteActivity extends AppCompatActivity {
                             || (addsubject_timeset.getStartTime()<=timeset.getEndTime() && timeset.getStartTime()<=addsubject_timeset.getStartTime())){
                         return false;
                     }
+                    
                 }
             }
         }
@@ -266,7 +272,29 @@ public class CompleteActivity extends AppCompatActivity {
         }
         return result;
     }
-
+    private void make_timetable(int write) {
+        int Write2=Write,Write3 = Write;
+        first_subjects.addAll(essential_subjects);
+        second_subjects.addAll(essential_subjects);
+        third_subjects.addAll(essential_subjects);
+        for (int i=0; i<subjects.size();i++){
+            if(Write>0 && isaddtosubjects(first_subjects,subjects.get(i))){
+                first_subjects.add(subjects.get(i));
+                Write-=subjects.get(i).getCredit();
+                continue;
+            }
+            if(Write2>0 && isaddtosubjects(second_subjects,subjects.get(i))){
+                second_subjects.add(subjects.get(i));
+                Write-=subjects.get(i).getCredit();
+                continue;
+            }
+            if(Write3>0 && isaddtosubjects(third_subjects,subjects.get(i))){
+                third_subjects.add(subjects.get(i));
+                Write-=subjects.get(i).getCredit();
+                continue;
+            }
+        }
+    }
 
 
 }
