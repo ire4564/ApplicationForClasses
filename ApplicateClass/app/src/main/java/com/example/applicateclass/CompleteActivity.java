@@ -248,16 +248,20 @@ public class CompleteActivity extends AppCompatActivity {
         for (int i=0; i<essential_subjects.size();i++){
             CustomScheduleItem subject = essential_subjects.get(i);
             ArrayList<CustomTimeset> timesets = subject.getTimelist();
+            if(subject.getSubjectnumber().equals(addsubject.getSubjectnumber())){
+                return false;
+            }
             for (int j=0; j<timesets.size();j++){
                 CustomTimeset timeset = timesets.get(j);
                 ArrayList<CustomTimeset> addsubject_list = addsubject.getTimelist();
+
                 for (int k=0; k<addsubject_list.size();k++){
                     CustomTimeset addsubject_timeset = addsubject_list.get(k);
                     if(( timeset.getStartTime()<=addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime()<=timeset.getEndTime())
                             || (addsubject_timeset.getStartTime()<=timeset.getEndTime() && timeset.getStartTime()<=addsubject_timeset.getStartTime())){
                         return false;
                     }
-                    
+
                 }
             }
         }
@@ -285,15 +289,16 @@ public class CompleteActivity extends AppCompatActivity {
             }
             if(Write2>0 && isaddtosubjects(second_subjects,subjects.get(i))){
                 second_subjects.add(subjects.get(i));
-                Write-=subjects.get(i).getCredit();
+                Write2-=subjects.get(i).getCredit();
                 continue;
             }
             if(Write3>0 && isaddtosubjects(third_subjects,subjects.get(i))){
                 third_subjects.add(subjects.get(i));
-                Write-=subjects.get(i).getCredit();
+                Write3-=subjects.get(i).getCredit();
                 continue;
             }
         }
+        Log.d("데이터","학점1"+Write+"학점2"+Write2+"학점3"+Write3);
     }
 
 
