@@ -27,6 +27,7 @@ public class CompleteActivity extends AppCompatActivity {
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
     private long lastTimeBackPressed;
     int Write, Grade, TimeSet, RestDay;
+    int essential_subjects_credit;
     String Days[] = new String[6];
     private List<CustomScheduleItem> subjects = new ArrayList<CustomScheduleItem>();
     private List<CustomScheduleItem> culturesubjects = new ArrayList<CustomScheduleItem>();
@@ -79,7 +80,7 @@ public class CompleteActivity extends AppCompatActivity {
                 }
             }
         }
-
+        essential_subjects_credit = count_essential_credit();
         DatabaseReference myref = FirebaseDatabase.getInstance().getReference();
         myref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -169,7 +170,6 @@ public class CompleteActivity extends AppCompatActivity {
     }
 
 
-
     public boolean getPerferenceBoolean(String key) { //데이터 불러오기(확인용)
         SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
         return pref.getBoolean(key,false);
@@ -257,5 +257,16 @@ public class CompleteActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    private int count_essential_credit() {
+        int result = 0;
+        for(int i=0; i<essential_subjects.size();i++){
+            CustomScheduleItem item = essential_subjects.get(i);
+            result+= item.getCredit();
+        }
+        return result;
+    }
+
+
 
 }
