@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -281,6 +282,7 @@ public class CompleteActivity extends AppCompatActivity {
         first_subjects.addAll(essential_subjects);
         second_subjects.addAll(essential_subjects);
         third_subjects.addAll(essential_subjects);
+        Collections.shuffle(subjects);
         for (int i=0; i<subjects.size();i++){
             if(Write>0 && isaddtosubjects(first_subjects,subjects.get(i))){
                 first_subjects.add(subjects.get(i));
