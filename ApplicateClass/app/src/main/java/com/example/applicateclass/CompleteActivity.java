@@ -17,7 +17,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -30,6 +35,7 @@ public class CompleteActivity extends AppCompatActivity {
     int Write, Grade, TimeSet, RestDay;
     int essential_subjects_credit;
     String Days[] = new String[6];
+    private Gson gson;
     private List<CustomScheduleItem> subjects = new ArrayList<CustomScheduleItem>();
     private List<CustomScheduleItem> culturesubjects = new ArrayList<CustomScheduleItem>();
     private List<CustomScheduleItem> essential_subjects = new ArrayList<>();
@@ -86,6 +92,7 @@ public class CompleteActivity extends AppCompatActivity {
         myref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.v("들어오나요?","ㅇㅇ");
                 for(DataSnapshot keys : dataSnapshot.getChildren()){
                     if(keys.getKey().equals(String.valueOf(Grade))){
                         showData(keys);
@@ -94,16 +101,16 @@ public class CompleteActivity extends AppCompatActivity {
                         showCultureData(keys);
                     }
                 }
-                //showData(dataSnapshot);
                 istimeavailable(subjects);
                 istimeavailable(culturesubjects);
                 culturesubjects.size();
                 subjects.addAll(culturesubjects);
                 Write -= essential_subjects_credit;
                 make_timetable(Write);
-                first_subjects.size();
-                second_subjects.size();
-                third_subjects.size();
+                onSaveData(first_subjects);
+                onSaveData(second_subjects);
+                onSaveData(third_subjects);
+
             }
 
             @Override
@@ -111,10 +118,6 @@ public class CompleteActivity extends AppCompatActivity {
 
             }
         });
-        Log.v("데이터확인", "학점"+String.valueOf(Write));
-        Log.v("데이터확인", "학년"+String.valueOf(Grade));
-        Log.v("데이터확인", "시간대"+String.valueOf(TimeSet));
-        Log.v("데이터확인", "공강"+String.valueOf(RestDay));
         /**********************
          *
          * 정보 받아오기 완료
@@ -140,6 +143,7 @@ public class CompleteActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         MainActivity.class);
+                intent.putExtra("select", "1");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -153,6 +157,7 @@ public class CompleteActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         MainActivity.class);
+                intent.putExtra("select", "2");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -167,6 +172,7 @@ public class CompleteActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         MainActivity.class);
+                intent.putExtra("select", "3");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -174,6 +180,24 @@ public class CompleteActivity extends AppCompatActivity {
 
     }
 
+    private void onSaveData(List<CustomScheduleItem> timelist) {
+        gson = new GsonBuilder().create();
+        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>(){}.getType();
+        String json = gson.toJson(timelist,listType);
+        SharedPreferences sharedPreferences;
+        if(timelist.toString().equals(first_subjects.toString())){
+            sharedPreferences = getSharedPreferences("1",MODE_PRIVATE);
+        }
+        else if (timelist.toString().equals(second_subjects.toString())){
+            sharedPreferences = getSharedPreferences("2",MODE_PRIVATE);
+        }
+        else {
+            sharedPreferences = getSharedPreferences("3",MODE_PRIVATE);
+        }
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("contacts",json);
+        editor.commit();
+    }
 
 
     public boolean getPerferenceBoolean(String key) { //데이터 불러오기(확인용)
@@ -184,14 +208,14 @@ public class CompleteActivity extends AppCompatActivity {
        for (DataSnapshot keys : dataSnapshot.getChildren()){
            CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
            subjects.add(customScheduleItem);
-           Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
+          // Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
        }
     }
     private void showCultureData(DataSnapshot dataSnapshot){
         for (DataSnapshot keys : dataSnapshot.getChildren()){
             CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
             culturesubjects.add(customScheduleItem);
-            Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
+            //Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
         }
     }
     @Override
@@ -300,7 +324,6 @@ public class CompleteActivity extends AppCompatActivity {
                 continue;
             }
         }
-        Log.d("데이터","학점1"+Write+"학점2"+Write2+"학점3"+Write3);
     }
 
 
