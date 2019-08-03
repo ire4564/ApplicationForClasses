@@ -107,9 +107,18 @@ public class CompleteActivity extends AppCompatActivity {
                 subjects.addAll(culturesubjects);
                 Write -= essential_subjects_credit;
                 make_timetable(Write);
-                onSaveData(first_subjects);
-                onSaveData(second_subjects);
-                onSaveData(third_subjects);
+                SharedPreferences sf = getSharedPreferences("check",MODE_PRIVATE);// check -> empty 가 no면 데이터가 이미 존재한다는 거
+                String check_subejcts = sf.getString("empty","");
+                Log.v("데이터확인",check_subejcts+"!!!!!!");
+                if(check_subejcts.equals("")){
+                    SharedPreferences.Editor editor =sf.edit();
+                    editor.putString("empty","no");
+                    editor.commit();
+                    onSaveData(first_subjects);
+                    onSaveData(second_subjects);
+                    onSaveData(third_subjects);
+                }
+
 
             }
 
