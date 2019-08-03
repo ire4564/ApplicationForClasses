@@ -24,7 +24,10 @@ public class SelectGradeActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grade);
-
+        SharedPreferences sf = getSharedPreferences("check",MODE_PRIVATE);
+        SharedPreferences.Editor editor =sf.edit();
+        editor.putString("empty","");
+        editor.commit();
         Intent intent_info = getIntent(); //데이터 수신 확인 (그런데 시간표 자동 수동 선택하는 건 굳이 정보를 넘겨주지 않아도 되므로 예시 사용/실사용 패스해도 됨)
         Boolean auto_key = intent_info.getExtras().getBoolean("auto_key");
         Boolean direct_key= intent_info.getExtras().getBoolean("direct_key");
