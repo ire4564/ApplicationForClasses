@@ -76,7 +76,8 @@ public class CustomOneLine extends LinearLayout {
         int endTail     = (endTime-900) % 100 > 0 ? 1 : 0;
 
         startTime = startFront * 2 + startTail;
-        endTime = endFront  * 2 + endTail;
+        endTime = endFront  * 2 + endTail -1;
+        Log.e("asd",startTime+" "+endTime);
 
         for(int i = startTime; i <= endTime; ++i){
             if(ac_TableTimeItems.get(i).getFull())
@@ -103,7 +104,7 @@ public class CustomOneLine extends LinearLayout {
         int endTail     = (endTime-900) % 100 > 0 ? 1 : 0;
 
         startTime = startFront * 2 + startTail;
-        endTime = endFront  * 2 + endTail;
+        endTime = endFront  * 2 + endTail-1;
 
         ac_TableTimeItems.get(startTime).setTableItem("", "", true , Color.parseColor("#ffffff"),false,null);
         for(int i = startTime+1; i < endTime; ++i)
