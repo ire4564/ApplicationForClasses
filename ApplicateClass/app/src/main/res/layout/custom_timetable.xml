@@ -17,12 +17,13 @@
             android:background="@color/divideLine" />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/tableItemSize"
-            android:orientation="horizontal">
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:background="@color/timetableBack">
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:fontFamily="@font/table_standard"
                 android:gravity="center"
                 android:text=""
@@ -39,7 +40,7 @@
                 android:fontFamily="@font/table_standard"
                 android:gravity="center"
                 android:text="월"
-                android:textColor="@color/timeText"
+                android:textColor="@color/buttonText"
                 android:textSize="@dimen/textSizeBig" />
             <ImageView
                 android:layout_width="@dimen/divideSizeThine"
@@ -52,7 +53,7 @@
                 android:fontFamily="@font/table_standard"
                 android:gravity="center"
                 android:text="화"
-                android:textColor="@color/timeText"
+                android:textColor="@color/buttonText"
                 android:textSize="@dimen/textSizeBig" />
             <ImageView
                 android:layout_width="@dimen/divideSizeThine"
@@ -65,7 +66,7 @@
                 android:fontFamily="@font/table_standard"
                 android:gravity="center"
                 android:text="수"
-                android:textColor="@color/timeText"
+                android:textColor="@color/buttonText"
                 android:textSize="@dimen/textSizeBig" />
             <ImageView
                 android:layout_width="@dimen/divideSizeThine"
@@ -78,7 +79,7 @@
                 android:fontFamily="@font/table_standard"
                 android:gravity="center"
                 android:text="목"
-                android:textColor="@color/timeText"
+                android:textColor="@color/buttonText"
                 android:textSize="@dimen/textSizeBig" />
             <ImageView
                 android:layout_width="@dimen/divideSizeThine"
@@ -91,7 +92,7 @@
                 android:fontFamily="@font/table_standard"
                 android:gravity="center"
                 android:text="금"
-                android:textColor="@color/timeText"
+                android:textColor="@color/buttonText"
                 android:textSize="@dimen/textSizeBig" />
             <ImageView
                 android:layout_width="@dimen/divideSizeThine"
@@ -117,13 +118,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="6">
+                >
 
                 <com.example.applicateclass.TimeTable.CustomOneLine
                     android:id="@+id/table_standard_line"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="0.5"
                     app:day="">
 
                 </com.example.applicateclass.TimeTable.CustomOneLine>

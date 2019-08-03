@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         setContentView(R.layout.activity_main);
         Intent intent_info = getIntent();
         String selectednumber = intent_info.getExtras().getString("select");
@@ -53,6 +54,16 @@ public class MainActivity extends AppCompatActivity {
         List<CustomScheduleItem> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
         for(CustomScheduleItem i : datas)
             customTimeTable.addTime(i);
+=======
+        setContentView(R.layout.activity_edit_schedule);
+        CustomTimeTable customTimeTable = (CustomTimeTable)findViewById(R.id.edit_schedule_main_table);
+        customTimeTable.addTime(new CustomScheduleItem("title","sub",new CustomTimeset(1,900,1330))); //title 제목 sub 부제목,
+                                                                                                                                             // 커스텀 타임셋 (개수 제한없음 , 리스트 배열가능)
+                                                                                                                                            //day (월요일부터 1~ 금요일 5)
+                                                                                                                                            //startTime hhmm 09시 30 -> 930
+                                                                                                                                            //endTime hhmm 위와 동일
+                                                                                                                                            //생성시 색깔 랜덤지정 (추후추가 예정
+>>>>>>> Develope
 
     }
 }
