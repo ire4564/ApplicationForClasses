@@ -249,14 +249,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-<<<<<<< HEAD
-                app:dividerSize="true"
-                app:subText="sub"
-                app:titleText="set">
-=======
-                app:dividerSize="false">
->>>>>>> Develope
-
+                app:dividerSize="true">
             </com.example.applicateclass.TimeTable.CustomTimeItem>
 
             <com.example.applicateclass.TimeTable.CustomTimeItem

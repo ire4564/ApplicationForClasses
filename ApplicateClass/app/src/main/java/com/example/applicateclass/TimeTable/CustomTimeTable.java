@@ -63,7 +63,6 @@ public class CustomTimeTable extends LinearLayout {
         colDays[THU] = (CustomOneLine) findViewById(R.id.table_thur_line);
         colDays[FRI] = (CustomOneLine) findViewById(R.id.table_fri_line);
 
-<<<<<<< HEAD
         colDays[TIM].setEditAble(false);
         colDays[MON].setCustomTimeTable(this);
         colDays[TUE].setCustomTimeTable(this);
@@ -72,7 +71,6 @@ public class CustomTimeTable extends LinearLayout {
         colDays[FRI].setCustomTimeTable(this);
 
         scrollView = (ScrollView) findViewById(R.id.table_scroll);
-=======
         scrollView = (ScrollView) findViewById(R.id.table_scroll);
 
         colorList.add(Color.parseColor("#a08b88"));
@@ -81,7 +79,7 @@ public class CustomTimeTable extends LinearLayout {
         colorList.add(Color.parseColor("#d9b8a7"));
         colorList.add(Color.parseColor("#eeebe4"));
         colorList.add(Color.parseColor("#c9b38e"));
->>>>>>> Develope
+
 
         colDays[TIM].setStandard();
 
@@ -105,25 +103,24 @@ public class CustomTimeTable extends LinearLayout {
     }
 
     public boolean addTime(CustomScheduleItem scheduleItem) {
-<<<<<<< HEAD
+
         for (CustomTimeset i : scheduleItem.getTimelist()) {
-            if (!colDays[i.getDay()].addTime(scheduleItem.getTitle(), scheduleItem.getSub(), i, scheduleItem)) {
-=======
-        Random rd = new Random();
-        int colorIndex = rd.nextInt(colorList.size());
-        int color = colorList.get(colorIndex);
-        for (CustomTimeset i : scheduleItem.getTimelist()) {
-            if (!colDays[i.getDay()].addTime(scheduleItem.getTitle(), scheduleItem.getSub(), i,color)) {
->>>>>>> Develope
+            Random rd = new Random();
+            int colorIndex = rd.nextInt(colorList.size());
+            int color = colorList.get(colorIndex);
+            if (!colDays[i.getDay()].addTime(scheduleItem.getTitle(), scheduleItem.getSub(), i, color, scheduleItem)) {
+                Log.e("asd","겹침 : "+scheduleItem.getTitle()+" "+scheduleItem.getTimelist().get(0).getDay());
                 Toast.makeText(getContext(), "중복된 스케줄이 존재합니다", Toast.LENGTH_LONG).show();
                 return false;
             } else {
                 scheduleItemArrayList.add(scheduleItem);
                 colorList.remove(colorIndex);
             }
+            return true;
         }
-        return true;
+        return false;
     }
+
 
     public void setEditAble(boolean editAble) {
         for (int i = 0; i < 6; ++i) {
@@ -131,7 +128,7 @@ public class CustomTimeTable extends LinearLayout {
         }
     }
 
-<<<<<<< HEAD
+
     public boolean removeSchedule(CustomScheduleItem item) {
         try {
             for (CustomTimeset i : item.getTimelist()) {
@@ -146,6 +143,5 @@ public class CustomTimeTable extends LinearLayout {
         }
         return true;
     }
-=======
->>>>>>> Develope
+
 }

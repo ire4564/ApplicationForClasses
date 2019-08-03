@@ -148,7 +148,7 @@ public class CustomTimeItem extends LinearLayout {
             ivDivideLine.setVisibility(View.VISIBLE);
     }
 
-<<<<<<< HEAD
+
     public void setScheduleItem(CustomScheduleItem scheduleItem) {
         this.scheduleItem = scheduleItem;
     }
@@ -162,9 +162,9 @@ public class CustomTimeItem extends LinearLayout {
     }
 
 
-=======
+
     public void setTextColor(int color){
         tvTitle.setTextColor(color);
     }
->>>>>>> Develope
+
 }
