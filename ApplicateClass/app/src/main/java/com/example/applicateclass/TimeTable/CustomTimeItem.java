@@ -58,30 +58,32 @@ public class CustomTimeItem extends LinearLayout {
         background.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                final AlertDialog.Builder oDialog = new AlertDialog.Builder(getContext(), android.R.style.Theme_DeviceDefault_Light_Dialog);
+                if(isFull) {
+                    final AlertDialog.Builder oDialog = new AlertDialog.Builder(getContext(), android.R.style.Theme_DeviceDefault_Light_Dialog);
+                    String infom="";
+                    infom+="수업명 : "+scheduleItem.getTitle()+"\n";
+                    infom+="담당 교수 : "+scheduleItem.getSub()+"\n";
+                    infom+="학수번호 : "+scheduleItem.getSubjectnumber()+"\n";
 
-                oDialog.setMessage("앱을 종료하시겠습니까?")
-                        .setTitle("일반 Dialog")
-                        .setNeutralButton("삭제", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                timeTable.removeSchedule(scheduleItem);
-                                dialog.dismiss();
-                            }
-                        })
-                        .setPositiveButton("닫기", new DialogInterface.OnClickListener()
-                        {
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                dialog.dismiss();
-                            }
-                        })
-                        .setCancelable(false) // 백버튼으로 팝업창이 닫히지 않도록 한다.
+                    oDialog.setMessage(infom)
+                            .setTitle(scheduleItem.getTitle() + "정보")
+                            .setNeutralButton("삭제", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    timeTable.removeSchedule(scheduleItem);
+                                    dialog.dismiss();
+                                }
+                            })
+                            .setPositiveButton("닫기", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            })
+                            .setCancelable(false) // 백버튼으로 팝업창이 닫히지 않도록 한다.
 
 
-                        .show();
+                            .show();
+                }
                 return true;
             }
         });

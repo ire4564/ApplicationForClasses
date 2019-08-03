@@ -135,9 +135,9 @@ public class CustomOneLine extends LinearLayout {
             ac_TableTimeItems.get(i).setTextColor(getResources().getColor(R.color.buttonText));
             if (i % 2 == 0)
 
-                ac_TableTimeItems.get(i).setTableItem(((i / 2 + 9) + ""), "", false, getResources().getColor(R.color.timetableBack), true, null);
+                ac_TableTimeItems.get(i).setTableItem(((i / 2 + 9) + ""), "", false, getResources().getColor(R.color.timetableBack), false, null);
             else
-                ac_TableTimeItems.get(i).setTableItem("", "", true, getResources().getColor(R.color.timetableBack), true, null);
+                ac_TableTimeItems.get(i).setTableItem("", "", true, getResources().getColor(R.color.timetableBack), false, null);
 
 
         }

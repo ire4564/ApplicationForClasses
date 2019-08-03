@@ -109,7 +109,7 @@ public class CustomTimeTable extends LinearLayout {
             int colorIndex = rd.nextInt(colorList.size());
             int color = colorList.get(colorIndex);
             if (!colDays[i.getDay()].addTime(scheduleItem.getTitle(), scheduleItem.getSub(), i, color, scheduleItem)) {
-                Log.e("asd","겹침 : "+scheduleItem.getTitle()+" "+scheduleItem.getTimelist().get(0).getDay());
+                Log.e("asd","겹침 : "+scheduleItem.getTitle()+" 요일 : "+scheduleItem.getTimelist().get(0).getDay());
                 Toast.makeText(getContext(), "중복된 스케줄이 존재합니다", Toast.LENGTH_LONG).show();
                 return false;
             } else {
