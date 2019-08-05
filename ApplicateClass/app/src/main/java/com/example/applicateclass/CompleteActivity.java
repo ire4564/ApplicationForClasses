@@ -291,8 +291,8 @@ public class CompleteActivity extends AppCompatActivity {
 
                 for (int k=0; k<addsubject_list.size();k++){
                     CustomTimeset addsubject_timeset = addsubject_list.get(k);
-                    if(( timeset.getStartTime()<=addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime()<=timeset.getEndTime())
-                            || (addsubject_timeset.getStartTime()<=timeset.getEndTime() && timeset.getStartTime()<=addsubject_timeset.getStartTime())){
+                    if((timeset.getDay()==addsubject_timeset.getDay())&&(( timeset.getStartTime()<=addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime()<=timeset.getEndTime())
+                            || (addsubject_timeset.getEndTime()<=timeset.getEndTime() && timeset.getStartTime()<=addsubject_timeset.getEndTime()))){
                         return false;
                     }
 
@@ -317,17 +317,17 @@ public class CompleteActivity extends AppCompatActivity {
         third_subjects.addAll(essential_subjects);
         Collections.shuffle(subjects);
         for (int i=0; i<subjects.size();i++){
-            if(Write>0 && isaddtosubjects(first_subjects,subjects.get(i))){
+            if(Write>=subjects.get(i).getCredit() && isaddtosubjects(first_subjects,subjects.get(i))){
                 first_subjects.add(subjects.get(i));
                 Write-=subjects.get(i).getCredit();
                 continue;
             }
-            if(Write2>0 && isaddtosubjects(second_subjects,subjects.get(i))){
+            if(Write2>=subjects.get(i).getCredit() && isaddtosubjects(second_subjects,subjects.get(i))){
                 second_subjects.add(subjects.get(i));
                 Write2-=subjects.get(i).getCredit();
                 continue;
             }
-            if(Write3>0 && isaddtosubjects(third_subjects,subjects.get(i))){
+            if(Write3>=subjects.get(i).getCredit() && isaddtosubjects(third_subjects,subjects.get(i))){
                 third_subjects.add(subjects.get(i));
                 Write3-=subjects.get(i).getCredit();
                 continue;
