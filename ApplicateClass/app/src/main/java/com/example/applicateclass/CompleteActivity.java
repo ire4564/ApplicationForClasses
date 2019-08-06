@@ -228,17 +228,13 @@ public class CompleteActivity extends AppCompatActivity {
         }
     }
     @Override
-    public void onBackPressed() { //화면에서 경고 메세지 띄우고 뒤로 가기
+    public void onBackPressed() { //화면에서 뒤로가기 방지
         //super.onBackPressed();
         if(System.currentTimeMillis() - lastTimeBackPressed < 2000){
-            Intent intent = new Intent(
-                    getApplicationContext(),
-                    RestDayActivity.class);
-            startActivity(intent); //종료시 오류나는 것 고치기
-            overridePendingTransition(0, 0);
+            finish();
             return;
         }
-        Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 기존에 생성된 시간표가 사라집니다.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
         lastTimeBackPressed = System.currentTimeMillis();
     }
 

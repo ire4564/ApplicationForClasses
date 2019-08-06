@@ -77,7 +77,7 @@ public class HowMuchActivity extends AppCompatActivity {
                         setPreferenceInt(write_score, Integer.parseInt(score));//정보 받기
                         Intent intent = new Intent(
                                 getApplicationContext(),
-                                SelectTimeSetActivity.class);
+                                ChooseSubjectsActivity.class);
                         intent.putExtra("Write", getPerferenceInt(write_score)); //정보전송 -> 몇학점인지(int)
                         intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
                         startActivity(intent);
