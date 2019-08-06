@@ -77,7 +77,7 @@ public class CustomTimeTable extends LinearLayout {
         colorList.add(Color.parseColor("#cc7e72"));
         colorList.add(Color.parseColor("#a6c3c7"));
         colorList.add(Color.parseColor("#d9b8a7"));
-        colorList.add(Color.parseColor("#eeebe4"));
+        colorList.add(Color.parseColor("#FFECB3"));
         colorList.add(Color.parseColor("#c9b38e"));
 
 
