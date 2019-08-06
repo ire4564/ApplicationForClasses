@@ -13,9 +13,11 @@ import android.widget.TextView;
 import com.example.applicateclass.R;
 
 public class CustomSlideBar extends LinearLayout {
+    boolean isOn;
     View v;
     TextView tv_down;
     Animation upAnim;
+    Animation downAnim;
     public CustomSlideBar(Context context) {
         super(context);
         initView();
@@ -37,8 +39,9 @@ public class CustomSlideBar extends LinearLayout {
         LayoutInflater li = (LayoutInflater) getContext().getSystemService(infService);
         v = li.inflate(R.layout.slide_buttom_tap, this, false);
         tv_down = (TextView)v.findViewById(R.id.slide_close);
-
-        final Animation downAnim = AnimationUtils.loadAnimation(getContext(),R.anim.slidebar_down_anim);
+        isOn = false;
+        v.setVisibility(INVISIBLE);
+        downAnim = AnimationUtils.loadAnimation(getContext(),R.anim.slidebar_down_anim);
         upAnim= AnimationUtils.loadAnimation(getContext(),R.anim.slidebar_anim);
 
 
@@ -51,6 +54,7 @@ public class CustomSlideBar extends LinearLayout {
             @Override
             public void onAnimationEnd(Animation animation) {
                 v.setVisibility(INVISIBLE);
+                isOn = false;
             }
 
             @Override
@@ -88,7 +92,16 @@ public class CustomSlideBar extends LinearLayout {
 
     }
     public  void open(){
+        isOn = true;
         v.setVisibility(View.VISIBLE);
         v.startAnimation(upAnim);
+    }
+
+    public void close(){
+        v.startAnimation(downAnim);
+    }
+
+    public boolean isOn() {
+        return isOn;
     }
 }

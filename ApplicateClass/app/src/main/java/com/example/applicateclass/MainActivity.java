@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     CustomTimeTable customTimeTable;
     CustomSlideBar customSlideBar;
     TextView       tv_openBtn;
+    BackPressCloseHandler backPressCloseHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_schedule);
         Intent intent_info = getIntent();
         String selectednumber = intent_info.getExtras().getString("select");
+
+        backPressCloseHandler = new BackPressCloseHandler(this);
+
         customTimeTable = (CustomTimeTable)findViewById(R.id.edit_schedule_main_table);
         customSlideBar = (CustomSlideBar)findViewById(R.id.edit_slide);
         tv_openBtn = (TextView)findViewById(R.id.edit_schedule_underTab);
@@ -81,5 +85,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(customSlideBar.isOn())
+            customSlideBar.close();
+        else{
+            backPressCloseHandler.onBackPressed();
+        }
     }
 }
