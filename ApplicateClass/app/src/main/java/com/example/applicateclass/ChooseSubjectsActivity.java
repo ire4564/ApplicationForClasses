@@ -16,6 +16,10 @@ import com.example.applicateclass.CustomView.CustomSelectBtn;
 import java.util.ArrayList;
 
 public class ChooseSubjectsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
+    private boolean isBoolean = false;
+    int Write, Grade;
+
     ArrayList<String> arrayList;
     ArrayAdapter<String> arrayAdapter;
 
@@ -24,6 +28,13 @@ public class ChooseSubjectsActivity extends AppCompatActivity implements Adapter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_subjects);//화면 로드
 
+        /**********Write는 학점으로 Int형으로 표현하여 정보를 저장한다*******************/
+
+        Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
+        Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
+        Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
+
+        //시간표 정보 추가하기
         arrayList = new ArrayList<>();
         arrayList.add("웹 프로그래밍");
         arrayList.add("컴퓨터 프로그래밍2");
@@ -53,7 +64,11 @@ public class ChooseSubjectsActivity extends AppCompatActivity implements Adapter
                 Intent intent = new Intent(
                         getApplicationContext(),
                         SelectTimeSetActivity.class);
+                intent.putExtra("subject",arrayList); //체크박스로 선택한 객체만 넘어오게 해야 함
+                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
                 startActivity(intent);
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -63,15 +78,17 @@ public class ChooseSubjectsActivity extends AppCompatActivity implements Adapter
                 Intent intent = new Intent(
                         getApplicationContext(),
                         HowMuchActivity.class);
+                //subjectarray를 초기화
                 startActivity(intent);
+                overridePendingTransition(0, 0);
             }
         });
     }
-/*
+
     @Override
     public void onBackPressed() {
         //화면에서 뒤로가기 방지
-    }*/
+    }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
