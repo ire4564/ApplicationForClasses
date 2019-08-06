@@ -6,7 +6,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
+import com.example.applicateclass.CustomView.CustomSlideBar;
 import com.example.applicateclass.TimeTable.CustomScheduleItem;
 import com.example.applicateclass.TimeTable.CustomTimeTable;
 import com.example.applicateclass.TimeTable.CustomTimeset;
@@ -21,8 +26,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private Gson gson = new GsonBuilder().create();
     CustomTimeTable customTimeTable;
-            ;
-
+    CustomSlideBar customSlideBar;
+    TextView       tv_openBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent_info = getIntent();
         String selectednumber = intent_info.getExtras().getString("select");
         customTimeTable = (CustomTimeTable)findViewById(R.id.edit_schedule_main_table);
+        customSlideBar = (CustomSlideBar)findViewById(R.id.edit_slide);
+        tv_openBtn = (TextView)findViewById(R.id.edit_schedule_underTab);
+
+        final Animation upAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slidebar_anim);
+        tv_openBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("asd","롸");
+                customSlideBar.open();
+            }
+        });
 
         onSearchData(customTimeTable, selectednumber);
        // customTimeTable.addTime(new CustomScheduleItem("title", "sub", new CustomTimeset(1, 900, 1300, "sd")));//title 제목 sub 부제목,
@@ -42,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         //startTime hhmm 09시 30 -> 930
         //endTime hhmm 위와 동일
         //생성시 색깔 랜덤지정 (추후추가 예정
+
     }
 
     private void onSearchData(CustomTimeTable customTimeTable, String selectenumber) {
