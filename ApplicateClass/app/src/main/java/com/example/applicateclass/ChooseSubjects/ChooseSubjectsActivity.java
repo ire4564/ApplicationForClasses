@@ -62,22 +62,22 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
                             ++index;
                             Log.d("데이터확인", String.valueOf(checkedItems.get(i)));
                         }
+                        Intent intent = new Intent(
+                                getApplicationContext(),
+                                SelectTimeSetActivity.class);
+                        intent.putExtra("subject",subject.toArray()); //체크박스로 선택한 객체만 넘어오게 해야 함
+                        intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                        intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                        startActivity(intent);
+                        overridePendingTransition(0, 0);
                     }
                 } else {
                     Toast.makeText(ChooseSubjectsActivity.this, "꼭 필수로 들을 과목을 선택해주세요.", Toast.LENGTH_SHORT).show();
                 }
-
                 listview.clearChoices() ;
                 adapter.notifyDataSetChanged();
                 //화면 전환 및 정보 전송
-                Intent intent = new Intent(
-                        getApplicationContext(),
-                        SelectTimeSetActivity.class);
-                intent.putExtra("subject",subject.toArray()); //체크박스로 선택한 객체만 넘어오게 해야 함
-                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
-                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                startActivity(intent);
-                overridePendingTransition(0, 0);
+
             }
         });
 
