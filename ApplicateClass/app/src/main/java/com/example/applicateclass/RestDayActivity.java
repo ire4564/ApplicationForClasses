@@ -35,7 +35,7 @@ public class RestDayActivity extends AppCompatActivity {
         /**********TimeSet 시간대 선택(오전, 오후, 상관없음)으로 Int형으로 오전:1 오후:2 상관없음:0 표현하여 정보를 저장한다*******************/
         //계속 가지고 있는 정보
         Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
-        final ArrayList<String> subject = (ArrayList<String>) intent_info.getSerializableExtra("subject"); //과목명이 담긴 배열
+     //  final ArrayList<String> subject = (ArrayList<String>) intent_info.getSerializableExtra("subject"); //과목명이 담긴 배열
         Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
         Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
 
@@ -77,7 +77,7 @@ public class RestDayActivity extends AppCompatActivity {
                 intent.putExtra("mon_key", getPerferenceBoolean(mon_key)); //정보전송 ->  월
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
+            //    intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
                 intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -97,7 +97,7 @@ public class RestDayActivity extends AppCompatActivity {
                 intent.putExtra("tue_key", getPerferenceBoolean(tue_key)); //정보전송 ->  화
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
+               // intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
                 intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -117,7 +117,7 @@ public class RestDayActivity extends AppCompatActivity {
                 intent.putExtra("wed_key", getPerferenceBoolean(wed_key)); //정보전송 ->  수
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
+            //    intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
                 intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -137,7 +137,7 @@ public class RestDayActivity extends AppCompatActivity {
                 intent.putExtra("thr_key", getPerferenceBoolean(thr_key)); //정보전송 ->  목
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
+             //   intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
                 intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -157,7 +157,7 @@ public class RestDayActivity extends AppCompatActivity {
                 intent.putExtra("fri_key", getPerferenceBoolean(fri_key)); //정보전송 ->  금
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
+            //    intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
                 intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -177,7 +177,7 @@ public class RestDayActivity extends AppCompatActivity {
                 intent.putExtra("noting_key", getPerferenceBoolean(noting_key)); //정보전송 ->  공강해당없음
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
+          //      intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
                 intent.putExtra("TimeSet", TimeSet); //정보 전송 -> 시간대 선택(int)
                 startActivity(intent);
                 overridePendingTransition(0, 0);

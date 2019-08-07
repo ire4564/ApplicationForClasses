@@ -30,11 +30,14 @@ public class SelectTimeSetActivity extends AppCompatActivity {
         /**********Write는 학점으로 Int형으로 표현하여 정보를 저장한다*******************/
 
         Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
-        final ArrayList<String> subject = (ArrayList<String>) intent_info.getSerializableExtra("subject"); //과목명이 담긴 배열
+       // final String subject[] = intent_info.getExtras().getStringArray("subject"); //과목명이 담긴 배열
         Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
         Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
-      // TextView testdata = (TextView) findViewById(R.id.timeset_test) ; //테스트용 전환
-      //   testdata.setText("Grade:" + Grade + " "+ "score: " +Write);
+
+      /*  TextView testdata = (TextView) findViewById(R.id.timeset_test) ; //테스트용 전환
+        testdata.setText(subject[0]);*/
+
+
 
         //am Button
         final CustomSelectBtn am = (CustomSelectBtn) findViewById(R.id.timeset_am);
@@ -49,7 +52,7 @@ public class SelectTimeSetActivity extends AppCompatActivity {
                 intent.putExtra("am_key", getPerferenceBoolean(am_key)); //정보전송 -> 오전 true
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
+             //   intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }

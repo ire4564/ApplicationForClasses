@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.applicateclass.ChooseSubjects.ChooseSubjectsActivity;
+
 public class HowMuchActivity extends AppCompatActivity {
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
     public String write_score = "write_score";
