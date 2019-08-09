@@ -8,9 +8,16 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.applicateclass.CustomView.CustomSelectBtn;
 
+import com.example.applicateclass.ChooseSubjects.SubjectSet;
+import com.example.applicateclass.CustomView.CustomSelectBtn;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SelectTimeSetActivity extends AppCompatActivity {
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
@@ -19,6 +26,7 @@ public class SelectTimeSetActivity extends AppCompatActivity {
     public String anytime_key = "anytime_key";
     private boolean isBoolean = false;
     int Write, Grade;
+    List<SubjectSet> allsubject = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +40,7 @@ public class SelectTimeSetActivity extends AppCompatActivity {
         Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
         Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
         Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
-
+        allsubject = takeAlldata();
 
 
         //am Button
@@ -91,6 +99,18 @@ public class SelectTimeSetActivity extends AppCompatActivity {
         });
     }
 
+    private void onSaveData() {
+
+    }
+
+    private List<SubjectSet> takeAlldata(){
+        Gson gson =  new GsonBuilder().create();;
+        SharedPreferences sp = getSharedPreferences("choose", MODE_PRIVATE);
+        String strContact = sp.getString("readytotime", "");
+        Type listType = new TypeToken<List<SubjectSet>>() {}.getType();
+        List<SubjectSet> datas = gson.fromJson(strContact, listType);
+        return datas;
+    }
     public void setPreference(String key, boolean value){ //데이터 저장 함수
         SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
