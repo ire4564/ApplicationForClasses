@@ -4,13 +4,14 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="divideLine">#cfceca</color>
-    <color name="timeText">#000000</color>
-    <color name="timeTextSub">#4a4a4a</color>
+    <color name="timeText">#eeebe4</color>
+    <color name="timeTextSub">#eeebe4</color>
     <color name="buttonText">#963b57</color>
     <color name="originText">#f2a3bb</color>
     <color name="timetableBack">#eeebe4</color>
     <color name="purpleColor">#e0d5f2</color>
     <color name="purpleText">#963b57</color>
+    <color name="s">#a08b88</color>
 
 
 </resources>

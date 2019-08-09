@@ -46,7 +46,7 @@ public class CustomOneLine extends LinearLayout {
         addView(v);
 
         String pkg = getContext().getPackageName();
-        for (int i = 0; i < 28; ++i) {
+        for (int i = 0; i < 30; ++i) {
             int id = getContext().getResources().getIdentifier("table_item" + (i + 1), "id", pkg);
             ac_TableTimeItems.add((CustomTimeItem)v.findViewById(id));
 
@@ -77,14 +77,14 @@ public class CustomOneLine extends LinearLayout {
         int startTime = item.getStartTime();
         int endTime = item.getEndTime();
 
-        int startFront = (startTime - 900) / 100;
-        int startTail = (startTime - 900) % 100 > 0 ? 1 : 0;
-        int endFront = (endTime - 900) / 100;
-        int endTail = (endTime - 900) % 100 > 0 ? 1 : 0;
+        int startFront = (startTime - 800) / 100;
+        int startTail = (startTime - 800) % 100 > 0 ? 1 : 0;
+        int endFront = (endTime - 800) / 100;
+        int endTail = (endTime - 800) % 100 > 0 ? 1 : 0;
 
         startTime = startFront * 2 + startTail;
         endTime = endFront * 2 + endTail - 1;
-        Log.e("asd", startTime + " " + endTime);
+
 
         for (int i = startTime; i <= endTime; ++i) {
             if (ac_TableTimeItems.get(i).getFull())
@@ -108,25 +108,28 @@ public class CustomOneLine extends LinearLayout {
     }
 
 
-    public boolean removeTime(CustomTimeset item) {
+    public boolean removeTime(CustomTimeset item, CustomScheduleItem target) {
         int startTime = item.getStartTime();
         int endTime = item.getEndTime();
 
-        int startFront = (startTime - 900) / 100;
-        int startTail = (startTime - 900) % 100 > 0 ? 1 : 0;
-        int endFront = (endTime - 900) / 100;
-        int endTail = (endTime - 900) % 100 > 0 ? 1 : 0;
+        int startFront = (startTime - 800) / 100;
+        int startTail = (startTime - 800) % 100 > 0 ? 1 : 0;
+        int endFront = (endTime - 800) / 100;
+        int endTail = (endTime - 800) % 100 > 0 ? 1 : 0;
 
         startTime = startFront * 2 + startTail;
         endTime = endFront * 2 + endTail - 1;
 
-        ac_TableTimeItems.get(startTime).removeItem();
-        for (int i = startTime + 1; i < endTime; ++i)
-            ac_TableTimeItems.get(i).removeItem();
-        ac_TableTimeItems.get(endTime).removeItem();
+        if(ac_TableTimeItems.get(startTime).getScheduleItem().getTitle().equals(target.getTitle())) {
+            ac_TableTimeItems.get(startTime).removeItem();
+            for (int i = startTime + 1; i < endTime; ++i)
+                ac_TableTimeItems.get(i).removeItem();
+            ac_TableTimeItems.get(endTime).removeItem();
+            return true;
 
+        }else
+            return false;
 
-        return true;
     }
 
 
@@ -135,7 +138,7 @@ public class CustomOneLine extends LinearLayout {
             ac_TableTimeItems.get(i).setTextColor(getResources().getColor(R.color.buttonText));
             if (i % 2 == 0)
 
-                ac_TableTimeItems.get(i).setTableItem(((i / 2 + 9) + ""), "", false, getResources().getColor(R.color.timetableBack), false, null);
+                ac_TableTimeItems.get(i).setTableItem(((i / 2 + 8) + ""), "", false, getResources().getColor(R.color.timetableBack), false, null);
             else
                 ac_TableTimeItems.get(i).setTableItem("", "", true, getResources().getColor(R.color.timetableBack), false, null);
 
@@ -146,6 +149,8 @@ public class CustomOneLine extends LinearLayout {
 
     public void setEditAble(boolean editAble) {
         this.editAble = editAble;
+        for (CustomTimeItem i : ac_TableTimeItems)
+            i.setEditAble(editAble);
     }
 
 

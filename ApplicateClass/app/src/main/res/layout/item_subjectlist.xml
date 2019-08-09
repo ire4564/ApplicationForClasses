@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:weightSum="10"
+    >
+    <LinearLayout
+        android:id="@+id/subjectItem_background"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#a08b88"
+        android:gravity="center|right">
+        <TextView
+            android:id="@+id/subjectItem_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="심리학개론"
+            android:textColor="@color/timeText"
+            android:textSize="16dp"
+            android:gravity="right"
+            android:fontFamily="@font/sc_5"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center|right">
+        <TextView
+            android:id="@+id/subjectItem_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="1학점"
+            android:textSize="14dp"
+            android:fontFamily="@font/sc_4"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center|right">
+            <TextView
+                android:id="@+id/subjectItem_time1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공5401 화 16:00\n~14:00"
+                android:textSize="14dp"
+                android:fontFamily="@font/sc_4"
+                android:layout_marginRight="15dp"
+                android:gravity="right"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center|right">
+            <TextView
+                android:id="@+id/subjectItem_time2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공5401 화 16:00\n~14:00"
+                android:textSize="14dp"
+                android:fontFamily="@font/sc_4"
+                android:layout_marginRight="15dp"
+                android:gravity="right"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

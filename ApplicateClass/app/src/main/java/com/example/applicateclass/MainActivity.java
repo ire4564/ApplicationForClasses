@@ -21,12 +21,15 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private Gson gson = new GsonBuilder().create();
-    CustomTimeTable customTimeTable;
-    CustomSlideBar customSlideBar;
+
+
+    static public CustomTimeTable customTimeTable;
+    static public CustomSlideBar customSlideBar;
     TextView       tv_openBtn;
     BackPressCloseHandler backPressCloseHandler;
     @Override
@@ -41,18 +44,19 @@ public class MainActivity extends AppCompatActivity {
 
         customTimeTable = (CustomTimeTable)findViewById(R.id.edit_schedule_main_table);
         customSlideBar = (CustomSlideBar)findViewById(R.id.edit_slide);
+
         tv_openBtn = (TextView)findViewById(R.id.edit_schedule_underTab);
 
-        final Animation upAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.slidebar_anim);
+        customTimeTable.setEditAble(true);
         tv_openBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("asd","롸");
                 customSlideBar.open();
             }
         });
 
         onSearchData(customTimeTable, selectednumber);
+
        // customTimeTable.addTime(new CustomScheduleItem("title", "sub", new CustomTimeset(1, 900, 1300, "sd")));//title 제목 sub 부제목,
         // 커스텀 타임셋 (개수 제한없음 , 리스트 배열가능)
         //day (월요일부터 1~ 금요일 5)
@@ -82,7 +86,14 @@ public class MainActivity extends AppCompatActivity {
             customTimeTable.addTime(i);
         }
 
+    }
+    private void setCompleteTimeTable(){
+        SharedPreferences sf = getSharedPreferences("check",MODE_PRIVATE);// check -> empty 가 no면 데이터가 이미 존재한다는 거
+        SharedPreferences.Editor editor = sf.edit();
+        ArrayList<CustomScheduleItem>timeTable = customTimeTable.getScheduleItemArrayList();
 
+        editor.putString("timetable",gson.toJson(timeTable));
+        editor.commit();
 
 
     }

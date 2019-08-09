@@ -77,8 +77,14 @@ public class CustomTimeTable extends LinearLayout {
         colorList.add(Color.parseColor("#cc7e72"));
         colorList.add(Color.parseColor("#a6c3c7"));
         colorList.add(Color.parseColor("#d9b8a7"));
-        colorList.add(Color.parseColor("#FFECB3"));
-        colorList.add(Color.parseColor("#c9b38e"));
+        colorList.add(Color.parseColor("#64B5F6"));
+        colorList.add(Color.parseColor("#B39DDB"));
+        colorList.add(Color.parseColor("#9FA8DA"));
+        colorList.add(Color.parseColor("#9CCC65"));
+        colorList.add(Color.parseColor("#A1887F"));
+
+
+
 
 
         colDays[TIM].setStandard();
@@ -103,22 +109,19 @@ public class CustomTimeTable extends LinearLayout {
     }
 
     public boolean addTime(CustomScheduleItem scheduleItem) {
-
+        Random rd = new Random();
+        int colorIndex = rd.nextInt(colorList.size());
+        int color = colorList.get(colorIndex);
         for (CustomTimeset i : scheduleItem.getTimelist()) {
-            Random rd = new Random();
-            int colorIndex = rd.nextInt(colorList.size());
-            int color = colorList.get(colorIndex);
             if (!colDays[i.getDay()].addTime(scheduleItem.getTitle(), scheduleItem.getSub(), i, color, scheduleItem)) {
-                Log.e("asd","겹침 : "+scheduleItem.getTitle()+" 요일 : "+scheduleItem.getTimelist().get(0).getDay());
+                removeSchedule(scheduleItem);
                 Toast.makeText(getContext(), "중복된 스케줄이 존재합니다", Toast.LENGTH_LONG).show();
                 return false;
-            } else {
-                scheduleItemArrayList.add(scheduleItem);
-                colorList.remove(colorIndex);
             }
-            return true;
         }
-        return false;
+        scheduleItemArrayList.add(scheduleItem);
+        colorList.remove(colorIndex);
+        return true;
     }
 
 
@@ -132,7 +135,7 @@ public class CustomTimeTable extends LinearLayout {
     public boolean removeSchedule(CustomScheduleItem item) {
         try {
             for (CustomTimeset i : item.getTimelist()) {
-                if (!colDays[i.getDay()].removeTime(i)) {
+                if (!colDays[i.getDay()].removeTime(i,item)) {
                     Toast.makeText(getContext(), "삭제 실패", Toast.LENGTH_LONG).show();
                     return false;
                 }
@@ -144,4 +147,7 @@ public class CustomTimeTable extends LinearLayout {
         return true;
     }
 
+    public ArrayList<CustomScheduleItem> getScheduleItemArrayList() {
+        return scheduleItemArrayList;
+    }
 }

@@ -47,4 +47,28 @@ public class CustomTimeset {
     public void setClassname(String classname) {
         this.classname = classname;
     }
+
+    @Override
+    public String toString() {
+        String dayText="";
+        String stTime;
+        String enTime;
+
+        switch (day){
+            case 1: dayText= "월";
+            break;
+            case 2: dayText= "화";
+                break;
+            case 3: dayText= "수";
+                break;
+            case 4: dayText= "목";
+                break;
+            case 5: dayText= "금";
+                break;
+        }
+
+        stTime = startTime/100+":"+(startTime%100 == 0 ? "00": startTime%100);
+        enTime =endTime/100+":"+(endTime%100 == 0 ? "00": endTime%100);
+        return classname+"  "+dayText+" "+stTime+"\n"+"~ "+enTime;
+    }
 }

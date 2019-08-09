@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:weightSum="28">
+            android:weightSum="30">
 
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item1"
@@ -48,9 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                app:dividerSize="true"
-
-                >
+                app:dividerSize="true">
 
             </com.example.applicateclass.TimeTable.CustomTimeItem>
 
@@ -254,6 +252,22 @@
 
             <com.example.applicateclass.TimeTable.CustomTimeItem
                 android:id="@+id/table_item28"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:dividerSize="true">
+
+            </com.example.applicateclass.TimeTable.CustomTimeItem>
+            <com.example.applicateclass.TimeTable.CustomTimeItem
+                android:id="@+id/table_item29"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:dividerSize="true">
+
+            </com.example.applicateclass.TimeTable.CustomTimeItem>
+            <com.example.applicateclass.TimeTable.CustomTimeItem
+                android:id="@+id/table_item30"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
