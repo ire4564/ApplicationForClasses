@@ -167,4 +167,40 @@ public class HowMuchActivity extends AppCompatActivity implements Runnable{
         super.onBackPressed();
         overridePendingTransition(0, 0);
     }
+
+
+    @Override
+    public void run() {
+
+    }
+
+    private void showData(DataSnapshot dataSnapshot) {
+        for (DataSnapshot keys : dataSnapshot.getChildren()){
+            CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
+            subject.add(customScheduleItem);
+        }
+    }
+    private void onSaveData(List<CustomScheduleItem> timelist) {
+        Gson gson = new GsonBuilder().create();
+        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>(){}.getType();
+        String json = gson.toJson(timelist,listType);
+        SharedPreferences sharedPreferences = getSharedPreferences("choose",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("json",json);
+        editor.commit();
+    }
+    private void onSaveData_list(List<String> values){
+        SharedPreferences prefs = getSharedPreferences("choose",MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        JSONArray a = new JSONArray();
+        for (int i = 0; i < values.size(); i++) {
+            a.put(values.get(i));
+        }
+        if (!values.isEmpty()) {
+            editor.putString("string", a.toString());
+        } else {
+            editor.putString("string", null);
+        }
+        editor.commit();
+    }
 }
