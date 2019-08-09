@@ -235,21 +235,19 @@ public class CompleteActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() { //화면에서 뒤로가기 방지
         //super.onBackPressed();
-<<<<<<< HEAD
         if (System.currentTimeMillis() - lastTimeBackPressed < 2000) {
             Intent intent = new Intent(
                     getApplicationContext(),
                     RestDayActivity.class);
             startActivity(intent); //종료시 오류나는 것 고치기
             overridePendingTransition(0, 0);
-=======
         if(System.currentTimeMillis() - lastTimeBackPressed < 2000){
             finish();
->>>>>>> b9d53fa6396ddf05db0d20022d16dac57ea4bab9
             return;
         }
         Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
         lastTimeBackPressed = System.currentTimeMillis();
+    }
     }
 
     private void istimeavailable(List<CustomScheduleItem> subjects) {
