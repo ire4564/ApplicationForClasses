@@ -24,17 +24,24 @@ import java.util.Arrays;
 import static android.content.Context.MODE_PRIVATE;
 
 public class CustomSlideBar extends LinearLayout {
-    boolean isOn;
-    View v;
-    TextView tv_down;
-    ListView ls;
-    ListViewAdapter adapter;
-    Animation upAnim;
-    Animation downAnim;
+    private boolean isOn;
+
+    private View v;
+
+    private TextView tv_down;
+
+    private ListView ls;
+    private ListViewAdapter adapter;
+
+    private Animation upAnim;
+    private Animation downAnim;
+
+    private CustomSelectBtn majorBtn;
+    private CustomSelectBtn cultureBtn;
 
     private ArrayList<CustomScheduleItem> subject = new ArrayList<>();
     private ArrayList<CustomScheduleItem> culture = new ArrayList<>();
-    private CustomTimeTable customTimeTable;
+
     public CustomSlideBar(Context context) {
         super(context);
         initView();
@@ -59,6 +66,8 @@ public class CustomSlideBar extends LinearLayout {
 
         tv_down = (TextView)v.findViewById(R.id.slide_close);
         ls = (ListView)v.findViewById(R.id.slid_subject);
+        majorBtn =(CustomSelectBtn)v.findViewById(R.id.slide_major);
+        cultureBtn =(CustomSelectBtn)v.findViewById(R.id.slide_other);
 
         loadClasses();
 
@@ -93,7 +102,18 @@ public class CustomSlideBar extends LinearLayout {
                 v.startAnimation(downAnim);
             }
         });
-
+        majorBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.addItem(subject);
+            }
+        });
+        cultureBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.addItem(culture);
+            }
+        });
 
 
         addView(v);
@@ -137,6 +157,7 @@ public class CustomSlideBar extends LinearLayout {
     public boolean isOn() {
         return isOn;
     }
+
     private void loadClasses(){
         Gson gson = new Gson();
         SharedPreferences sf = getContext().getSharedPreferences("check",MODE_PRIVATE);// check -> empty 가 no면 데이터가 이미 존재한다는 거
