@@ -154,13 +154,13 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
         }
         return true;
     }
-    private void onSaveData(List<CustomScheduleItem> timelist) {
+    private void onSaveData(List<SubjectSet> timelist) {
         Gson gson = new GsonBuilder().create();
-        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>(){}.getType();
+        Type listType = new TypeToken<List<SubjectSet>>(){}.getType();
         String json = gson.toJson(timelist,listType);
         SharedPreferences sharedPreferences = getSharedPreferences("choose",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("subject",json);
+        editor.putString("readytotime",json);
         editor.commit();
     }
 }
