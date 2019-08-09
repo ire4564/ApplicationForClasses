@@ -57,6 +57,8 @@ public class CompleteActivity extends AppCompatActivity {
         Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
         TimeSet= intent_info.getExtras().getInt("TimeSet"); //선택한 시간대(오전 오후 무관 1 2 0 )
 
+        essential_subjects = takeChooseData();
+
         Boolean mon_key = intent_info.getExtras().getBoolean("mon_key");
         Boolean tue_key = intent_info.getExtras().getBoolean("tue_key");
         Boolean wed_key = intent_info.getExtras().getBoolean("wed_key");
@@ -330,6 +332,16 @@ public class CompleteActivity extends AppCompatActivity {
                 continue;
             }
         }
+    }
+    private List<CustomScheduleItem> takeChooseData() {
+        Gson gson =  new GsonBuilder().create();;
+        SharedPreferences sp = getSharedPreferences("choose", MODE_PRIVATE);
+        String strContact = sp.getString("subject", "");
+
+        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {}.getType();
+
+        List<CustomScheduleItem> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
+        return datas;
     }
 
 
