@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicateclass.ChooseSubjects.SubjectSet;
 import com.example.applicateclass.CustomView.CustomSelectBtn;
+import com.example.applicateclass.TimeTable.CustomScheduleItem;
+import com.example.applicateclass.TimeTable.CustomTimeset;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -56,7 +58,7 @@ public class SelectTimeSetActivity extends AppCompatActivity {
                 intent.putExtra("am_key", getPerferenceBoolean(am_key)); //정보전송 -> 오전 true
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-             //   intent.putExtra("subject", subject); //정보 전송 -> 어떤 과목을 선택했는지
+                remove_timelist(1);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -75,6 +77,7 @@ public class SelectTimeSetActivity extends AppCompatActivity {
                 intent.putExtra("pm_key", getPerferenceBoolean(pm_key)); //정보전송 -> 오후 true
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                remove_timelist(2);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -93,6 +96,7 @@ public class SelectTimeSetActivity extends AppCompatActivity {
                 intent.putExtra("anytime_key", getPerferenceBoolean(anytime_key)); //정보전송 -> 상관없음 true
                 intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
                 intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                remove_timelist(0);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -100,11 +104,17 @@ public class SelectTimeSetActivity extends AppCompatActivity {
     }
 
     private void onSaveData() {
-
+        Gson gson = new GsonBuilder().create();
+        Type listType = new TypeToken<List<SubjectSet>>(){}.getType();
+        String json = gson.toJson(allsubject,listType);
+        SharedPreferences sharedPreferences = getSharedPreferences("choose",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("readytoDay",json);
+        editor.commit();
     }
 
     private List<SubjectSet> takeAlldata(){
-        Gson gson =  new GsonBuilder().create();;
+        Gson gson =  new GsonBuilder().create();
         SharedPreferences sp = getSharedPreferences("choose", MODE_PRIVATE);
         String strContact = sp.getString("readytotime", "");
         Type listType = new TypeToken<List<SubjectSet>>() {}.getType();
@@ -131,4 +141,48 @@ public class SelectTimeSetActivity extends AppCompatActivity {
         super.onBackPressed();
         overridePendingTransition(0, 0);
     }
+
+    public void remove_timelist(int standard){
+        for(int i=0; i<allsubject.size();i++){
+            List<CustomScheduleItem> list = allsubject.get(i).getSubjectsArray();
+            List<CustomScheduleItem> newList = new ArrayList<>();
+            for(int j=0; j<list.size();j++){
+                CustomScheduleItem item = list.get(j);
+                if(standard==1 && Removetimelist_afternnon(item)){
+                    newList.add(item);
+                }
+                else if(standard==2 && Removetimelist_morning(item)){
+                    newList.add(item);
+                }
+            }
+            if(newList.size()!=0){
+                allsubject.get(i).setSubjectsArray(newList);
+            }
+        }
+        onSaveData();
+    }
+
+    private boolean Removetimelist_morning(CustomScheduleItem item) {
+        List<CustomTimeset> timesets = item.getTimelist();
+        for(int i=0; i<timesets.size();i++){
+            CustomTimeset customTimeset = timesets.get(i);
+            if(customTimeset.getStartTime()<=1200){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private Boolean Removetimelist_afternnon(CustomScheduleItem item) {
+        List<CustomTimeset> timesets = item.getTimelist();
+        for(int i=0; i<timesets.size();i++){
+            CustomTimeset customTimeset = timesets.get(i);
+            if(customTimeset.getStartTime()>=1300){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
 }
