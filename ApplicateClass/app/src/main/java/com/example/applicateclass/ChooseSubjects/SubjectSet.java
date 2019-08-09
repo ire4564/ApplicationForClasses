@@ -9,14 +9,24 @@ public class SubjectSet {
 
     String name;
     List<CustomScheduleItem> SubjectsArray;
+    int credit;
+
+    public int getCredit() {
+        return credit;
+    }
+
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
 
     public  SubjectSet(){
 
     }
 
-    public SubjectSet(String name, List<CustomScheduleItem> subjectsArray) {
+    public SubjectSet(String name, List<CustomScheduleItem> subjectsArray,int credit) {
         this.name = name;
         SubjectsArray = subjectsArray;
+        this.credit = credit;
     }
 
     public String getName() {
