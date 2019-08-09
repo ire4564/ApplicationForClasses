@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="subjects">
+        <item>과목을 선택해주세요.</item>
+        <item>선형대수</item>
+        <item>알고리즘</item>
+        <item>자료구조</item>
+        <item>객체지향설계</item>
+        <item>인공지능</item>
+        <item>모바일 소프트웨어설계</item>
+        <item>창의 소프트웨어설계</item>
+    </string-array>
+</resources>

@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {
         }.getType();
         List<CustomScheduleItem> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
+        Log.v("데이터확인", String.valueOf(datas.size()));
         for(CustomScheduleItem i : datas) {
             Log.e("asd",i.getTitle()+" "+i.getTimelist().get(0).getDay());
             customTimeTable.addTime(i);

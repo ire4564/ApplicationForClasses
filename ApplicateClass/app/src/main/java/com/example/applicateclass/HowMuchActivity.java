@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.applicateclass.ChooseSubjects.ChooseSubjectsActivity;
+
 public class HowMuchActivity extends AppCompatActivity {
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
     public String write_score = "write_score";
@@ -77,7 +79,7 @@ public class HowMuchActivity extends AppCompatActivity {
                         setPreferenceInt(write_score, Integer.parseInt(score));//정보 받기
                         Intent intent = new Intent(
                                 getApplicationContext(),
-                                SelectTimeSetActivity.class);
+                                ChooseSubjectsActivity.class);
                         intent.putExtra("Write", getPerferenceInt(write_score)); //정보전송 -> 몇학점인지(int)
                         intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
                         startActivity(intent);

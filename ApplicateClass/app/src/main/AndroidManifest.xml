@@ -26,6 +26,9 @@
         <activity android:name=".HowMuchActivity"/>
         <activity android:name=".RestDayActivity"/>
         <activity android:name=".SelectTimeSetActivity"/>
+        <activity android:name=".ChooseSubjects.ChooseSubjectsActivity"/>
+
+
 
     </application>
 

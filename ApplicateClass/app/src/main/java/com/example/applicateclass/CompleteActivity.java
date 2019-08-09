@@ -53,6 +53,7 @@ public class CompleteActivity extends AppCompatActivity {
         /**********RestDay 공강 요일 선택(월,화,수,목,금,무관)으로 Int형으로 차례대로 1 2 3 4 5 0 으로 표현하여 정보를 저장한다*******************/
         //계속 가지고 있는 정보
         Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
+        //final ArrayList<String> subject = (ArrayList<String>) intent_info.getSerializableExtra("subject"); //과목명이 담긴 배열
         Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
         Grade = intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
         TimeSet = intent_info.getExtras().getInt("TimeSet"); //선택한 시간대(오전 오후 무관 1 2 0 )
@@ -230,17 +231,22 @@ public class CompleteActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() { //화면에서 경고 메세지 띄우고 뒤로 가기
+    public void onBackPressed() { //화면에서 뒤로가기 방지
         //super.onBackPressed();
+<<<<<<< HEAD
         if (System.currentTimeMillis() - lastTimeBackPressed < 2000) {
             Intent intent = new Intent(
                     getApplicationContext(),
                     RestDayActivity.class);
             startActivity(intent); //종료시 오류나는 것 고치기
             overridePendingTransition(0, 0);
+=======
+        if(System.currentTimeMillis() - lastTimeBackPressed < 2000){
+            finish();
+>>>>>>> b9d53fa6396ddf05db0d20022d16dac57ea4bab9
             return;
         }
-        Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 기존에 생성된 시간표가 사라집니다.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
         lastTimeBackPressed = System.currentTimeMillis();
     }
 
