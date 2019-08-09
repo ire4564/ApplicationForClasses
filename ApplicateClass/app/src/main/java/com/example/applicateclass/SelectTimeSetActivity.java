@@ -30,12 +30,8 @@ public class SelectTimeSetActivity extends AppCompatActivity {
         /**********Write는 학점으로 Int형으로 표현하여 정보를 저장한다*******************/
 
         Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
-       // final String subject[] = intent_info.getExtras().getStringArray("subject"); //과목명이 담긴 배열
         Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
         Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
-
-      /*  TextView testdata = (TextView) findViewById(R.id.timeset_test) ; //테스트용 전환
-        testdata.setText(subject[0]);*/
 
 
 
