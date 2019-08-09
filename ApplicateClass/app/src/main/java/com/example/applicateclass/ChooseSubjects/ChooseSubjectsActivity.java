@@ -115,4 +115,68 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
     public void onBackPressed() {
         //화면에서 뒤로가기 방지
     }
+    private List<String> getStringArrayPref() {
+        SharedPreferences prefs = getSharedPreferences("choose",MODE_PRIVATE);
+        String json = (String) prefs.getString("string", "");
+        List<String> urls = new ArrayList<>();
+        if (json != null) {
+            try {
+                JSONArray a = new JSONArray(json);
+                for (int i = 0; i < a.length(); i++) {
+                    String url = (String) a.optString(i);
+                    urls.add(url);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return urls;
+    }
+    private List<CustomScheduleItem> takeAlldata() {
+        Gson gson =  new GsonBuilder().create();;
+        SharedPreferences sp = getSharedPreferences("choose", MODE_PRIVATE);
+        String strContact = sp.getString("json", "");
+
+        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {}.getType();
+
+        List<CustomScheduleItem> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
+        return datas;
+    }
+    private boolean isnotconflict(List<CustomScheduleItem> essential_subjects) {
+        for (int q = 0; q < essential_subjects.size(); q++) {
+            CustomScheduleItem addsubject = essential_subjects.get(q);
+            for (int i = 0; i < essential_subjects.size(); i++) {
+                if(i==q){
+                    continue;
+                }
+                CustomScheduleItem subject = essential_subjects.get(i);
+                ArrayList<CustomTimeset> timesets = subject.getTimelist();
+                for (int j = 0; j < timesets.size(); j++) {
+                    CustomTimeset timeset = timesets.get(j);
+                    ArrayList<CustomTimeset> addsubject_list = addsubject.getTimelist();
+
+                    for (int k = 0; k < addsubject_list.size(); k++) {
+                        CustomTimeset addsubject_timeset = addsubject_list.get(k);
+                        if ((timeset.getDay() == addsubject_timeset.getDay()) && ((timeset.getStartTime() <= addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime() <= timeset.getEndTime())
+                                || (addsubject_timeset.getEndTime() <= timeset.getEndTime() && timeset.getStartTime() <= addsubject_timeset.getEndTime()))) {
+                            Toast.makeText(ChooseSubjectsActivity.this, addsubject.getTitle()+addsubject.getClassnumber()+"와 "+subject.getTitle()+subject.getClassnumber()+"이 충돌합니다.", Toast.LENGTH_LONG).show();
+                            return false;
+                        }
+
+                    }
+                }
+            }
+
+        }
+        return true;
+    }
+    private void onSaveData(List<CustomScheduleItem> timelist) {
+        Gson gson = new GsonBuilder().create();
+        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>(){}.getType();
+        String json = gson.toJson(timelist,listType);
+        SharedPreferences sharedPreferences = getSharedPreferences("choose",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("subject",json);
+        editor.commit();
+    }
 }
