@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicateclass.ChooseSubjects.ChooseSubjectsActivity;
+import com.example.applicateclass.ChooseSubjects.SubjectSet;
 import com.example.applicateclass.TimeTable.CustomScheduleItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +39,7 @@ public class HowMuchActivity extends AppCompatActivity implements Runnable{
     private Context context;
     public int Grade;
     List<CustomScheduleItem> subject = new ArrayList<>();
+    List<SubjectSet> subjectSets = new ArrayList<>();
     String[] subject_select;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class HowMuchActivity extends AppCompatActivity implements Runnable{
                                 List<String> subject_list = new ArrayList<>();
                                 for(int i=0; i<subject.size();i++){
                                     CustomScheduleItem customScheduleItem  = subject.get(i);
-                                    subject_list.add(customScheduleItem.getTitle()+" "+customScheduleItem.getClassnumber()+" "+customScheduleItem.getSub());
+                                    subject_list.add(customScheduleItem.getTitle()+" "+customScheduleItem.getClassnumber()+" "+customScheduleItem.getSub()+customScheduleItem.toString());
                                     Log.v("데이터",customScheduleItem.getTitle()+" "+customScheduleItem.getClassnumber()+" "+customScheduleItem.getSub());
                                 }
                                 subject_select = subject_list.toArray(new String[0]);
@@ -179,6 +181,17 @@ public class HowMuchActivity extends AppCompatActivity implements Runnable{
             CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
             subject.add(customScheduleItem);
         }
+    }
+    private void Adddata(CustomScheduleItem item){
+        for (int i=0; i<subjectSets.size();i++){
+            if(subjectSets.get(i).getName().equals(item.getTitle())){
+                subjectSets.get(i).getSubjectsArray().add(item);
+                return;
+            }
+        }
+        List<CustomScheduleItem> items = new ArrayList<>();
+        SubjectSet set = new SubjectSet(item.getTitle(),items,item.getCredit());
+
     }
     private void onSaveData(List<CustomScheduleItem> timelist) {
         Gson gson = new GsonBuilder().create();
