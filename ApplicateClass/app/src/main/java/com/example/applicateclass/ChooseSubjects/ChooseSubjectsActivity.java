@@ -36,13 +36,13 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
     private boolean isBoolean = false;
     int Write, Grade;
-    List<CustomScheduleItem> subject = new ArrayList<>(); //저장되어 다음으로 넘겨질 정보들
+    List<SubjectSet> choose_subject = new ArrayList<>(); //저장되어 다음으로 넘겨질 정보들
     /*final String[] subject_select = {"웹 프로그래밍","컴퓨터 프로그래밍3","알고리즘","창의 소프트웨어 설계","모바일 소프트웨어 설계",
                                     "인공지능", "선형대수학", "객체지향 설계", "컴퓨터 구조"};*/ //2번 String 타입의 배열 선언
     String[] subject_select = {};
     ArrayAdapter adapter;
     ListView listview;
-    List<CustomScheduleItem> all_subject = new ArrayList<>();
+    List<SubjectSet> all_subject = new ArrayList<>();
 
 
 
@@ -55,11 +55,13 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
         Intent intent_info = getIntent(); //데이터 수신 (학년+ 학점) //다음 액티비티에도 포함하여 저장
         Write = intent_info.getExtras().getInt("Write"); //입력한 학점 받아옴
         Grade= intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
-        subject_select = getStringArrayPref().toArray(new String[0]);
+        all_subject = takeAlldata();
+        subject_select = getStringArrayPref();
 
         adapter = new ArrayAdapter(getApplicationContext(), R.layout.simple_list_item, subject_select);
         listview = (ListView)findViewById(R.id.choose_subjects_List);
         listview.setAdapter(adapter);
+
         CustomSelectBtn next_btn = (CustomSelectBtn)findViewById(R.id.choose_subjects_nextbtn);
         CustomSelectBtn back_btn = (CustomSelectBtn)findViewById(R.id.choose_subjects_backbtn);
 
@@ -68,11 +70,10 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 SparseBooleanArray checkedItems = listview.getCheckedItemPositions(); //체크박스로 체크한 셀의 정보를 담고 있는 희소 논리 배열 얻어오기
                 int count = adapter.getCount(); //전체 몇개인지 세기
-                all_subject = takeAlldata();
                 if(checkedItems.size()!=0){
                     for(int i=count-1; i>=0; i--){
                         if(checkedItems.get(i)){ //희소 논리 배열의 해당 인덱스가 선택되어 있다면
-                            subject.add(all_subject.get(i)) ; //arrayList에 추가하기
+                            choose_subject.add(all_subject.get(i));
                         }
                     }
 
@@ -115,31 +116,19 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
     public void onBackPressed() {
         //화면에서 뒤로가기 방지
     }
-    private List<String> getStringArrayPref() {
-        SharedPreferences prefs = getSharedPreferences("choose",MODE_PRIVATE);
-        String json = (String) prefs.getString("string", "");
-        List<String> urls = new ArrayList<>();
-        if (json != null) {
-            try {
-                JSONArray a = new JSONArray(json);
-                for (int i = 0; i < a.length(); i++) {
-                    String url = (String) a.optString(i);
-                    urls.add(url);
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+    private String[] getStringArrayPref() {
+        List<String> strings = new ArrayList<>();
+        for(int i=0; i<all_subject.size();i++){
+            strings.add(all_subject.get(i).getName());
         }
-        return urls;
+        return strings.toArray(new String[0]);
     }
-    private List<CustomScheduleItem> takeAlldata() {
+    private List<SubjectSet> takeAlldata() {
         Gson gson =  new GsonBuilder().create();;
         SharedPreferences sp = getSharedPreferences("choose", MODE_PRIVATE);
-        String strContact = sp.getString("json", "");
-
-        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {}.getType();
-
-        List<CustomScheduleItem> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
+        String strContact = sp.getString("subjectlist", "");
+        Type listType = new TypeToken<List<SubjectSet>>() {}.getType();
+        List<SubjectSet> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
         return datas;
     }
     private boolean isnotconflict(List<CustomScheduleItem> essential_subjects) {
