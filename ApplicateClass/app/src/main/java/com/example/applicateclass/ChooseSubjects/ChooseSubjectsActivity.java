@@ -80,19 +80,6 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
                 } /*else {
                     Toast.makeText(ChooseSubjectsActivity.this, "꼭 필수로 들을 과목을 선택해주세요.", Toast.LENGTH_SHORT).show();
                 }*/
-                if(isnotconflict(subject)){
-                    onSaveData(subject);
-                    Intent intent = new Intent(
-                            getApplicationContext(),
-                            SelectTimeSetActivity.class);
-                    intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
-                    intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                    startActivity(intent);
-                    overridePendingTransition(0, 0);
-                }
-                else{
-                    subject = new ArrayList<>();
-                }
                 listview.clearChoices() ;
                 adapter.notifyDataSetChanged();
                 //화면 전환 및 정보 전송
