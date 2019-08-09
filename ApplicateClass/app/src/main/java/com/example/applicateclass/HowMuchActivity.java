@@ -4,29 +4,82 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicateclass.ChooseSubjects.ChooseSubjectsActivity;
+import com.example.applicateclass.TimeTable.CustomScheduleItem;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-public class HowMuchActivity extends AppCompatActivity {
+import org.json.JSONArray;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
+public class HowMuchActivity extends AppCompatActivity implements Runnable{
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
     public String write_score = "write_score";
     private Context context;
     public int Grade;
-
-
+    List<CustomScheduleItem> subject = new ArrayList<>();
+    String[] subject_select;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_howmuch);
 
+        Thread th = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DatabaseReference myref = FirebaseDatabase.getInstance().getReference();
+                myref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Log.v("데이터","여기오긴오냐");
+                        for(DataSnapshot keys : dataSnapshot.getChildren()){
+                            if(keys.getKey().equals(String.valueOf(Grade))){
+                                showData(keys);
+                                onSaveData(subject);
+                                List<String> subject_list = new ArrayList<>();
+                                for(int i=0; i<subject.size();i++){
+                                    CustomScheduleItem customScheduleItem  = subject.get(i);
+                                    subject_list.add(customScheduleItem.getTitle()+" "+customScheduleItem.getClassnumber()+" "+customScheduleItem.getSub());
+                                    Log.v("데이터",customScheduleItem.getTitle()+" "+customScheduleItem.getClassnumber()+" "+customScheduleItem.getSub());
+                                }
+                                subject_select = subject_list.toArray(new String[0]);
+                                onSaveData_list(subject_list);
+                            }
+
+
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
+        th.start();
         String grade[] = new String[4];
 
         /**********Grade는 1~4학년을 숫자 Grade: 1, 2, 3, 4로 표현하여 정보를 저장한다*******************/
@@ -94,6 +147,8 @@ public class HowMuchActivity extends AppCompatActivity {
         });
     }
 
+
+
     public void setPreferenceInt(String key, int value){ //학점 점수 저장(int)
         SharedPreferences pref = getSharedPreferences(PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
@@ -111,5 +166,41 @@ public class HowMuchActivity extends AppCompatActivity {
         write_score = "write_score";
         super.onBackPressed();
         overridePendingTransition(0, 0);
+    }
+
+
+    @Override
+    public void run() {
+
+    }
+
+    private void showData(DataSnapshot dataSnapshot) {
+        for (DataSnapshot keys : dataSnapshot.getChildren()){
+            CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
+            subject.add(customScheduleItem);
+        }
+    }
+    private void onSaveData(List<CustomScheduleItem> timelist) {
+        Gson gson = new GsonBuilder().create();
+        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>(){}.getType();
+        String json = gson.toJson(timelist,listType);
+        SharedPreferences sharedPreferences = getSharedPreferences("choose",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("json",json);
+        editor.commit();
+    }
+    private void onSaveData_list(List<String> values){
+        SharedPreferences prefs = getSharedPreferences("choose",MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        JSONArray a = new JSONArray();
+        for (int i = 0; i < values.size(); i++) {
+            a.put(values.get(i));
+        }
+        if (!values.isEmpty()) {
+            editor.putString("string", a.toString());
+        } else {
+            editor.putString("string", null);
+        }
+        editor.commit();
     }
 }
