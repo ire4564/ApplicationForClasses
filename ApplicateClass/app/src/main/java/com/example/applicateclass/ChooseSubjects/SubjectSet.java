@@ -41,7 +41,7 @@ public class SubjectSet {
         return SubjectsArray;
     }
 
-    public void setSubjectsArray(ArrayList<CustomScheduleItem> subjectsArray) {
+    public void setSubjectsArray(List<CustomScheduleItem> subjectsArray) {
         SubjectsArray = subjectsArray;
     }
 }
