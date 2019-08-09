@@ -69,6 +69,6 @@ public class CustomTimeset {
 
         stTime = startTime/100+":"+(startTime%100 == 0 ? "00": startTime%100);
         enTime =endTime/100+":"+(endTime%100 == 0 ? "00": endTime%100);
-        return classname+"  "+dayText+" "+stTime+"\n"+"~ "+enTime;
+        return classname+"  "+dayText+" "+stTime+" ~ "+enTime;
     }
 }
