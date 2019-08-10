@@ -365,5 +365,31 @@ public class CompleteActivity extends AppCompatActivity {
 
 
     }
+    private boolean isnotconflict_list(List<CustomScheduleItem> essential_subjects) {
+        for (int q = 0; q < essential_subjects.size(); q++) {
+            CustomScheduleItem addsubject = essential_subjects.get(q);
+            for (int i = 0; i < essential_subjects.size(); i++) {
+                if(i==q){
+                    continue;
+                }
+                CustomScheduleItem subject = essential_subjects.get(i);
+                ArrayList<CustomTimeset> timesets = subject.getTimelist();
+                for (int j = 0; j < timesets.size(); j++) {
+                    CustomTimeset timeset = timesets.get(j);
+                    ArrayList<CustomTimeset> addsubject_list = addsubject.getTimelist();
 
+                    for (int k = 0; k < addsubject_list.size(); k++) {
+                        CustomTimeset addsubject_timeset = addsubject_list.get(k);
+                        if ((timeset.getDay() == addsubject_timeset.getDay()) && ((timeset.getStartTime() <= addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime() <= timeset.getEndTime())
+                                || (addsubject_timeset.getEndTime() <= timeset.getEndTime() && timeset.getStartTime() <= addsubject_timeset.getEndTime()))) {
+                            return false;
+                        }
+
+                    }
+                }
+            }
+
+        }
+        return true;
+    }
 }
