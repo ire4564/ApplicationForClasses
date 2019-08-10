@@ -192,13 +192,41 @@ public class CompleteActivity extends AppCompatActivity {
 
     }
 
-    private void onSaveData(List<CustomScheduleItem> timelist) {
-        gson = new GsonBuilder().create();
-        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {
-        }.getType();
-        String json = gson.toJson(timelist, listType);
-        SharedPreferences sharedPreferences;
-        if (timelist.toString().equals(first_subjects.toString())) {
+    private void MakeChooseSubjects(int i, List<CustomScheduleItem> lists) {
+        List<CustomScheduleItem> items = essentialsubjects.get(i).getSubjectsArray();
+        for( int j=0; j<items.size();j++){
+            lists.add(items.get(j));
+            if(lists.size()==essentialsubjects.size()){
+                List<CustomScheduleItem> addlist = new ArrayList<>();
+                addlist.addAll(lists);
+                all_choose_subjects.add(addlist);
+                if(isnotconflict_list(addlist)){
+                    available_choose_subjects.add(addlist);
+                }
+                lists.remove(items.get(j));
+
+                continue;
+            }
+
+            MakeChooseSubjects(i+1,lists);
+            lists.remove(items.get(j));
+        }
+
+    }
+
+    private void onSaveData() {
+
+        for (int i=0; i<3;i++){
+            gson = new GsonBuilder().create();
+            Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {}.getType();
+            String json = gson.toJson(final_choose_subjects.get(i), listType);
+            SharedPreferences sharedPreferences;
+            sharedPreferences = getSharedPreferences(String.valueOf(i+1), MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("contacts", json);
+            editor.commit();
+        }
+       /* if (timelist.toString().equals(first_subjects.toString())) {
             sharedPreferences = getSharedPreferences("1", MODE_PRIVATE);
         } else if (timelist.toString().equals(second_subjects.toString())) {
             sharedPreferences = getSharedPreferences("2", MODE_PRIVATE);
