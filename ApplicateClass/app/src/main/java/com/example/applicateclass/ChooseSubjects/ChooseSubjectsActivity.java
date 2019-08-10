@@ -68,30 +68,35 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() { //다음으로 화면 이동
             @Override
             public void onClick(View view) {
+                int AllCredit = 0;
                 SparseBooleanArray checkedItems = listview.getCheckedItemPositions(); //체크박스로 체크한 셀의 정보를 담고 있는 희소 논리 배열 얻어오기
                 int count = adapter.getCount(); //전체 몇개인지 세기
                 if(checkedItems.size()!=0){
                     for(int i=count-1; i>=0; i--){
                         if(checkedItems.get(i)){ //희소 논리 배열의 해당 인덱스가 선택되어 있다면
                             choose_subject.add(all_subject.get(i));
+                            AllCredit+= all_subject.get(i).getCredit();
                         }
                     }
 
-                } /*else {
-                    Toast.makeText(ChooseSubjectsActivity.this, "꼭 필수로 들을 과목을 선택해주세요.", Toast.LENGTH_SHORT).show();
-                }*/
-                onSaveData(choose_subject);
-                Intent intent = new Intent(
-                        getApplicationContext(),
-                        SelectTimeSetActivity.class);
-                intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
-                intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                listview.clearChoices() ;
-                adapter.notifyDataSetChanged();
-                //화면 전환 및 정보 전송
+                }
+                if(AllCredit>Write){
+                    Toast.makeText(ChooseSubjectsActivity.this, "학점이 초과하였습니다.", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    onSaveData(choose_subject);
+                    Intent intent = new Intent(
+                            getApplicationContext(),
+                            SelectTimeSetActivity.class);
+                    intent.putExtra("Write", Write); //정보 전송 -> 학점(int)
+                    intent.putExtra("Grade", Grade); //정보 전송 -> 몇학년인지(int)
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
+                    listview.clearChoices();
+                    adapter.notifyDataSetChanged();
+                    //화면 전환 및 정보 전송
 
+                }
             }
         });
 
