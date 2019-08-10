@@ -126,34 +126,7 @@ public class ChooseSubjectsActivity extends AppCompatActivity {
         List<SubjectSet> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
         return datas;
     }
-    private boolean isnotconflict(List<CustomScheduleItem> essential_subjects) {
-        for (int q = 0; q < essential_subjects.size(); q++) {
-            CustomScheduleItem addsubject = essential_subjects.get(q);
-            for (int i = 0; i < essential_subjects.size(); i++) {
-                if(i==q){
-                    continue;
-                }
-                CustomScheduleItem subject = essential_subjects.get(i);
-                ArrayList<CustomTimeset> timesets = subject.getTimelist();
-                for (int j = 0; j < timesets.size(); j++) {
-                    CustomTimeset timeset = timesets.get(j);
-                    ArrayList<CustomTimeset> addsubject_list = addsubject.getTimelist();
 
-                    for (int k = 0; k < addsubject_list.size(); k++) {
-                        CustomTimeset addsubject_timeset = addsubject_list.get(k);
-                        if ((timeset.getDay() == addsubject_timeset.getDay()) && ((timeset.getStartTime() <= addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime() <= timeset.getEndTime())
-                                || (addsubject_timeset.getEndTime() <= timeset.getEndTime() && timeset.getStartTime() <= addsubject_timeset.getEndTime()))) {
-                            Toast.makeText(ChooseSubjectsActivity.this, addsubject.getTitle()+addsubject.getClassnumber()+"와 "+subject.getTitle()+subject.getClassnumber()+"이 충돌합니다.", Toast.LENGTH_LONG).show();
-                            return false;
-                        }
-
-                    }
-                }
-            }
-
-        }
-        return true;
-    }
     private void onSaveData(List<SubjectSet> timelist) {
         Gson gson = new GsonBuilder().create();
         Type listType = new TypeToken<List<SubjectSet>>(){}.getType();
