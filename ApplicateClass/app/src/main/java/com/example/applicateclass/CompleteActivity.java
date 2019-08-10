@@ -355,10 +355,8 @@ public class CompleteActivity extends AppCompatActivity {
 
                 for (int k = 0; k < addsubject_list.size(); k++) {
                     CustomTimeset addsubject_timeset = addsubject_list.get(k);
-                    if ((timeset.getDay() == addsubject_timeset.getDay()) && ((timeset.getStartTime() <= addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime() <= timeset.getEndTime())
-                            || (addsubject_timeset.getEndTime() <= timeset.getEndTime() && timeset.getStartTime() <= addsubject_timeset.getEndTime())
-                    ||(addsubject_timeset.getStartTime() <= timeset.getStartTime() && timeset.getStartTime() <= addsubject_timeset.getEndTime())
-                    ||(timeset.getEndTime() <= addsubject_timeset.getEndTime() && addsubject_timeset.getStartTime() <= timeset.getEndTime()))) {
+                    if ((timeset.getDay() == addsubject_timeset.getDay()) &&
+                            ((CheckConflict(timeset,addsubject_timeset)||CheckConflict(addsubject_timeset,timeset)))) {
                         return false;
                     }
 
@@ -436,8 +434,8 @@ public class CompleteActivity extends AppCompatActivity {
 
                     for (int k = 0; k < addsubject_list.size(); k++) {
                         CustomTimeset addsubject_timeset = addsubject_list.get(k);
-                        if ((timeset.getDay() == addsubject_timeset.getDay()) && ((timeset.getStartTime() <= addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime() <= timeset.getEndTime())
-                                || (addsubject_timeset.getEndTime() <= timeset.getEndTime() && timeset.getStartTime() <= addsubject_timeset.getEndTime()))) {
+                        if ((timeset.getDay() == addsubject_timeset.getDay()) &&
+                                (CheckConflict(timeset,addsubject_timeset)||CheckConflict(addsubject_timeset,timeset))) {
                             return false;
                         }
 
@@ -447,5 +445,15 @@ public class CompleteActivity extends AppCompatActivity {
 
         }
         return true;
+    }
+    private boolean CheckConflict(CustomTimeset start , CustomTimeset end){
+        if((start.getEndTime() == end.getStartTime())|| (end.getEndTime()==start.getStartTime())){
+            return false;
+        }
+        if(((start.getStartTime() <= end.getStartTime() && end.getStartTime() <= start.getEndTime())
+                || (end.getEndTime() <= start.getEndTime() && start.getStartTime() <= end.getEndTime()))){
+            return true;
+        }
+        return false;
     }
 }
