@@ -93,4 +93,14 @@ public class CustomScheduleItem {
     public void setCredit(int credit) {
         this.credit = credit;
     }
+
+    @Override
+    public String toString() {
+        String str="";
+        for (int i=0; i<timelist.size();i++){
+            CustomTimeset timeset  = timelist.get(i);
+            str += "\n"+timeset.toString();
+        }
+        return str;
+    }
 }
