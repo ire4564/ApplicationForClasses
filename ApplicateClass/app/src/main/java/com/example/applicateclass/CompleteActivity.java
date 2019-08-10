@@ -40,17 +40,12 @@ public class CompleteActivity extends AppCompatActivity {
     private Gson gson;
     private List<CustomScheduleItem> subjects = new ArrayList<CustomScheduleItem>();
     private List<CustomScheduleItem> culturesubjects = new ArrayList<CustomScheduleItem>();
-    private List<CustomScheduleItem> essential_subjects = new ArrayList<>();
     private List<SubjectSet> essentialsubjects = new ArrayList<>();
     private List<List<CustomScheduleItem>> all_choose_subjects = new ArrayList<>();
     private List<List<CustomScheduleItem>> available_choose_subjects = new ArrayList<>();
     private List<List<CustomScheduleItem>> final_choose_subjects = new ArrayList<>();
     private List<CustomScheduleItem> choose_subjects = new ArrayList<>();
     private List<List<CustomScheduleItem>> every_subjects = new ArrayList<>();
-    private List<CustomScheduleItem> first_subjects = new ArrayList<>();
-    private List<CustomScheduleItem> second_subjects = new ArrayList<>();
-    private List<CustomScheduleItem> third_subjects = new ArrayList<>();
-    int num = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -153,11 +148,6 @@ public class CompleteActivity extends AppCompatActivity {
          * RestDay: 공간 선택
          *
          ***********************/
-
-        //테스트 코드
-        //    TextView testdata = (TextView) findViewById(R.id.complete_textView) ; //테스트용 전환
-        //    testdata.setText("Grade:" + Grade + " "+ "score: " +Write + " "+ "TimeSet: " +TimeSet + " "+ "RestDay: " +RestDay);
-
 
         //select1 Button
         CustomSelectBtn sel1 = (CustomSelectBtn) findViewById(R.id.complete_select1);
