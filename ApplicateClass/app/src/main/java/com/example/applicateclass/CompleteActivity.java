@@ -67,16 +67,14 @@ public class CompleteActivity extends AppCompatActivity {
 
         essentialsubjects = takeChooseData();
         MakeChooseSubjects(0,choose_subjects);
-        if(available_choose_subjects.size()!=0) {
-            for (int i = 0; i < 3; i++) {
-                Collections.shuffle(available_choose_subjects);
-                List<CustomScheduleItem> list = new ArrayList<>();
-                list.addAll(available_choose_subjects.get(0));
-                final_choose_subjects.add(list);
-            }
+        if(available_choose_subjects.size()==0) {
+            Make_AvailableList();
         }
-        else{
-
+        for (int i = 0; i < 3; i++) {
+            Collections.shuffle(available_choose_subjects);
+            List<CustomScheduleItem> list = new ArrayList<>();
+            list.addAll(available_choose_subjects.get(0));
+            final_choose_subjects.add(list);
         }
         Boolean mon_key = intent_info.getExtras().getBoolean("mon_key");
         Boolean tue_key = intent_info.getExtras().getBoolean("tue_key");
@@ -205,6 +203,27 @@ public class CompleteActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void Make_AvailableList() {
+        int n= 1;
+        while(true){
+            for(int i=0; i<all_choose_subjects.size();i++){
+                for(int j=0; j<all_choose_subjects.get(i).size();j++){
+                    List<CustomScheduleItem> list = new ArrayList<>();
+                    list.addAll(all_choose_subjects.get(i));
+                    for(int k=0; k<n;k++){
+                        Collections.shuffle(list);
+                        list.remove(0);
+                    }
+                    if(isnotconflict_list(list)){
+                        available_choose_subjects.add(list);
+                        return;
+                    }
+                }
+            }
+            n++;
+        }
     }
 
     private void MakeChooseSubjects(int i, List<CustomScheduleItem> lists) {
