@@ -60,7 +60,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/scdream3"
                 android:gravity="center_horizontal"
-                android:text="시간표 없는 대학교는 위험하니\n시간표를 데려가렴"
+                android:text="시간표가 없다고?\n시간표 없는 대학교는 위험하니\n시간표를 데려가렴"
                 android:textColor="#f2a3bb"
                 android:textSize="18dp" />
 

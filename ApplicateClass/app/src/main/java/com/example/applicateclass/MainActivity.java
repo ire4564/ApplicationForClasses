@@ -1,12 +1,19 @@
 package com.example.applicateclass;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -42,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent_info = getIntent();
         int mode = intent_info.getIntExtra("mode",0);
 
-        String selectednumber = intent_info.getExtras().getString("select");
+        String selectednumber = intent_info.getStringExtra("select");
 
         backPressCloseHandler = new BackPressCloseHandler(this);
 
@@ -70,11 +77,7 @@ public class MainActivity extends AppCompatActivity {
             tv_commit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    setCompleteTimeTable();
-                    finish();
-                    Intent intent = new Intent(MainActivity.this , MainActivity.class);
-                    intent.putExtra("mode",2);
-                    startActivity(intent);
+                  floatDeleteDialog();
                 }
             });
         }
@@ -91,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this , MainActivity.class);
                     intent.putExtra("mode",1);
                     startActivity(intent);
+                    overridePendingTransition(0, R.anim.fadeout);
+
                 }
             });
         }
@@ -106,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this , MainActivity.class);
                     intent.putExtra("mode",1);
                     startActivity(intent);
+                    overridePendingTransition(0, R.anim.fadeout);
+
                 }
             });
         }
@@ -128,19 +135,19 @@ public class MainActivity extends AppCompatActivity {
         String check_subejcts = sf.getString("empty", "");
         Log.v("데이터확인00", check_subejcts + "!!!!!!");
 
+        if(!check_subejcts.equals("")&&!selectenumber.equals("")) {
+            SharedPreferences sp = getSharedPreferences(selectenumber, MODE_PRIVATE);
+            String strContact = sp.getString("contacts", "");
 
-        SharedPreferences sp = getSharedPreferences(selectenumber, MODE_PRIVATE);
-        String strContact = sp.getString("contacts", "");
-
-        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {
-        }.getType();
-        List<CustomScheduleItem> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
-        Log.v("데이터확인", String.valueOf(datas.size()));
-        for(CustomScheduleItem i : datas) {
-            Log.e("asd",i.getTitle()+" "+i.getTimelist().get(0).getDay());
-            customTimeTable.addTime(i);
+            Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {
+            }.getType();
+            List<CustomScheduleItem> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
+            Log.v("데이터확인", String.valueOf(datas.size()));
+            for (CustomScheduleItem i : datas) {
+                Log.e("asd", i.getTitle() + " " + i.getTimelist().get(0).getDay());
+                customTimeTable.addTime(i);
+            }
         }
-
     }
     private void setCompleteTimeTable(){
         SharedPreferences sf = getSharedPreferences("check",MODE_PRIVATE);
@@ -170,5 +177,48 @@ public class MainActivity extends AppCompatActivity {
         else{
             backPressCloseHandler.onBackPressed();
         }
+    }
+
+    private void floatDeleteDialog(){
+        final AlertDialog.Builder oDialog = new AlertDialog.Builder(MainActivity.this, android.R.style.Theme_DeviceDefault_Light_Dialog);
+        String infom="수정하시겠습니까? 다시 만드시겠습니까?";
+
+        oDialog.setMessage(infom)
+                .setTitle("수정")
+                .setNeutralButton("다시 만들기", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        Intent intent = new Intent(MainActivity.this , DoctoroActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(0, R.anim.fadeout);
+                        dialog.dismiss();
+                    }
+                })
+                .setPositiveButton("수정", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        setCompleteTimeTable();
+                        finish();
+                        Intent intent = new Intent(MainActivity.this , MainActivity.class);
+                        intent.putExtra("mode",2);
+                        startActivity(intent);
+                        overridePendingTransition(0, R.anim.fadeout);
+                        dialog.dismiss();
+                    }
+                })
+                .setCancelable(false); // 백버튼으로 팝업창이 닫히지 않도록 한다.
+
+        Dialog dialog = oDialog.create();
+        dialog.getWindow().setGravity(Gravity.CENTER);
+        dialog.show();
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+
+        Window window = dialog.getWindow();
+        window.setAttributes(lp);
+
     }
 }
