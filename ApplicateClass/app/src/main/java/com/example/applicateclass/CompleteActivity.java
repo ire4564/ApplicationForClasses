@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.applicateclass.ChooseSubjects.SubjectSet;
 import com.example.applicateclass.CustomView.CustomSelectBtn;
 import com.example.applicateclass.TimeTable.CustomScheduleItem;
 import com.example.applicateclass.TimeTable.CustomTimeset;
@@ -34,15 +35,17 @@ public class CompleteActivity extends AppCompatActivity {
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
     private long lastTimeBackPressed;
     int Write, Grade, TimeSet, RestDay;
-    int essential_subjects_credit;
+    List<Integer> essential_subjects_credit = new ArrayList<>();
     String Days[] = new String[6];
     private Gson gson;
     private List<CustomScheduleItem> subjects = new ArrayList<CustomScheduleItem>();
     private List<CustomScheduleItem> culturesubjects = new ArrayList<CustomScheduleItem>();
-    private List<CustomScheduleItem> essential_subjects = new ArrayList<>();
-    private List<CustomScheduleItem> first_subjects = new ArrayList<>();
-    private List<CustomScheduleItem> second_subjects = new ArrayList<>();
-    private List<CustomScheduleItem> third_subjects = new ArrayList<>();
+    private List<SubjectSet> essentialsubjects = new ArrayList<>();
+    private List<List<CustomScheduleItem>> all_choose_subjects = new ArrayList<>();
+    private List<List<CustomScheduleItem>> available_choose_subjects = new ArrayList<>();
+    private List<List<CustomScheduleItem>> final_choose_subjects = new ArrayList<>();
+    private List<CustomScheduleItem> choose_subjects = new ArrayList<>();
+    private List<List<CustomScheduleItem>> every_subjects = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +61,17 @@ public class CompleteActivity extends AppCompatActivity {
         Grade = intent_info.getExtras().getInt("Grade"); //선택한 grade1, grade2...
         TimeSet = intent_info.getExtras().getInt("TimeSet"); //선택한 시간대(오전 오후 무관 1 2 0 )
 
-        essential_subjects = takeChooseData();
-
+        essentialsubjects = takeChooseData();
+        MakeChooseSubjects(0, choose_subjects);
+        if (available_choose_subjects.size() == 0) {
+            Make_AvailableList();
+        }
+        for (int i = 0; i < 3; i++) {
+            Collections.shuffle(available_choose_subjects);
+            List<CustomScheduleItem> list = new ArrayList<>();
+            list.addAll(available_choose_subjects.get(0));
+            final_choose_subjects.add(list);
+        }
         Boolean mon_key = intent_info.getExtras().getBoolean("mon_key");
         Boolean tue_key = intent_info.getExtras().getBoolean("tue_key");
         Boolean wed_key = intent_info.getExtras().getBoolean("wed_key");
@@ -106,12 +118,9 @@ public class CompleteActivity extends AppCompatActivity {
                     }
                 }
                 saveClasses();
-                istimeavailable(subjects);
-                istimeavailable(culturesubjects);
-                culturesubjects.size();
-                subjects.addAll(culturesubjects);
-                Write -= essential_subjects_credit;
-                make_timetable(Write);
+                istimeavailable(subjects, 0);
+                istimeavailable(culturesubjects, 1);
+                make_timetable();
                 SharedPreferences sf = getSharedPreferences("check", MODE_PRIVATE);// check -> empty 가 no면 데이터가 이미 존재한다는 거
                 String check_subejcts = sf.getString("empty", "");
                 Log.v("데이터확인", check_subejcts + "!!!!!!");
@@ -119,9 +128,8 @@ public class CompleteActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sf.edit();
                     editor.putString("empty", "no");
                     editor.commit();
-                    onSaveData(first_subjects);
-                    onSaveData(second_subjects);
-                    onSaveData(third_subjects);
+                    onSaveData();
+
                 }
 
             }
@@ -140,11 +148,6 @@ public class CompleteActivity extends AppCompatActivity {
          * RestDay: 공간 선택
          *
          ***********************/
-
-        //테스트 코드
-        //    TextView testdata = (TextView) findViewById(R.id.complete_textView) ; //테스트용 전환
-        //    testdata.setText("Grade:" + Grade + " "+ "score: " +Write + " "+ "TimeSet: " +TimeSet + " "+ "RestDay: " +RestDay);
-
 
         //select1 Button
         CustomSelectBtn sel1 = (CustomSelectBtn) findViewById(R.id.complete_select1);
@@ -192,22 +195,62 @@ public class CompleteActivity extends AppCompatActivity {
 
     }
 
-    private void onSaveData(List<CustomScheduleItem> timelist) {
-        gson = new GsonBuilder().create();
-        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {
-        }.getType();
-        String json = gson.toJson(timelist, listType);
-        SharedPreferences sharedPreferences;
-        if (timelist.toString().equals(first_subjects.toString())) {
-            sharedPreferences = getSharedPreferences("1", MODE_PRIVATE);
-        } else if (timelist.toString().equals(second_subjects.toString())) {
-            sharedPreferences = getSharedPreferences("2", MODE_PRIVATE);
-        } else {
-            sharedPreferences = getSharedPreferences("3", MODE_PRIVATE);
+    private void Make_AvailableList() {
+        int n = 1;
+        while (true) {
+            for (int i = 0; i < all_choose_subjects.size(); i++) {
+                for (int j = 0; j < all_choose_subjects.get(i).size(); j++) {
+                    List<CustomScheduleItem> list = new ArrayList<>();
+                    list.addAll(all_choose_subjects.get(i));
+                    for (int k = 0; k < n; k++) {
+                        Collections.shuffle(list);
+                        list.remove(0);
+                    }
+                    if (isnotconflict_list(list)) {
+                        available_choose_subjects.add(list);
+                        return;
+                    }
+                }
+            }
+            n++;
         }
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("contacts", json);
-        editor.commit();
+    }
+
+    private void MakeChooseSubjects(int i, List<CustomScheduleItem> lists) {
+        List<CustomScheduleItem> items = essentialsubjects.get(i).getSubjectsArray();
+        for (int j = 0; j < items.size(); j++) {
+            lists.add(items.get(j));
+            if (lists.size() == essentialsubjects.size()) {
+                List<CustomScheduleItem> addlist = new ArrayList<>();
+                addlist.addAll(lists);
+                all_choose_subjects.add(addlist);
+                if (isnotconflict_list(addlist)) {
+                    available_choose_subjects.add(addlist);
+                }
+                lists.remove(items.get(j));
+
+                continue;
+            }
+
+            MakeChooseSubjects(i + 1, lists);
+            lists.remove(items.get(j));
+        }
+
+    }
+
+    private void onSaveData() {
+
+        for (int i = 0; i < 3; i++) {
+            gson = new GsonBuilder().create();
+            Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {
+            }.getType();
+            String json = gson.toJson(final_choose_subjects.get(i), listType);
+            SharedPreferences sharedPreferences;
+            sharedPreferences = getSharedPreferences(String.valueOf(i + 1), MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("contacts", json);
+            editor.commit();
+        }
     }
 
 
@@ -220,7 +263,6 @@ public class CompleteActivity extends AppCompatActivity {
         for (DataSnapshot keys : dataSnapshot.getChildren()) {
             CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
             subjects.add(customScheduleItem);
-            // Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
         }
     }
 
@@ -228,7 +270,6 @@ public class CompleteActivity extends AppCompatActivity {
         for (DataSnapshot keys : dataSnapshot.getChildren()) {
             CustomScheduleItem customScheduleItem = keys.getValue(CustomScheduleItem.class);
             culturesubjects.add(customScheduleItem);
-            //Log.v("데이터", String.valueOf(customScheduleItem.getTitle()));
         }
     }
 
@@ -241,28 +282,36 @@ public class CompleteActivity extends AppCompatActivity {
                     RestDayActivity.class);
             startActivity(intent); //종료시 오류나는 것 고치기
             overridePendingTransition(0, 0);
-        if(System.currentTimeMillis() - lastTimeBackPressed < 2000){
-            finish();
-            return;
+            if (System.currentTimeMillis() - lastTimeBackPressed < 2000) {
+                finish();
+                return;
+            }
+            Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
+            lastTimeBackPressed = System.currentTimeMillis();
         }
-        Toast.makeText(this, "뒤로 버튼을 한번 더 누르시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
-        lastTimeBackPressed = System.currentTimeMillis();
-    }
     }
 
-    private void istimeavailable(List<CustomScheduleItem> subjects) {
-        Iterator<CustomScheduleItem> item = subjects.iterator();
-        while (item.hasNext()) {
-            CustomScheduleItem scheduleItem = item.next();
-            if (!checktimelist(scheduleItem, TimeSet, RestDay)) {
-                item.remove();
+    private void istimeavailable(List<CustomScheduleItem> subjects, int k) {
+
+        for (int i = 0; i < 3; i++) {
+            List<CustomScheduleItem> subject = new ArrayList<>();
+            subject.addAll(subjects);
+            Iterator<CustomScheduleItem> item = subject.iterator();
+            while (item.hasNext()) {
+                CustomScheduleItem scheduleItem = item.next();
+                if (!checktimelist(i, scheduleItem, TimeSet, RestDay)) {
+                    item.remove();
+                }
+            }
+            if (k == 1) {
+                every_subjects.get(i).addAll(subject);
+            } else {
+                every_subjects.add(subject);
             }
         }
-        subjects.size();
-
     }
 
-    private boolean checktimelist(CustomScheduleItem subject, int timeSet, int restDay) {
+    private boolean checktimelist(int j, CustomScheduleItem subject, int timeSet, int restDay) {
         ArrayList<CustomTimeset> timelist = subject.getTimelist();
         for (int i = 0; i < timelist.size(); i++) {
             CustomTimeset time = timelist.get(i);
@@ -276,7 +325,7 @@ public class CompleteActivity extends AppCompatActivity {
                 }
             }
         }
-        if (!isaddtosubjects(essential_subjects, subject)) {
+        if (!isaddtosubjects(final_choose_subjects.get(j), subject)) {
             return false;
         }
         return true;
@@ -297,58 +346,55 @@ public class CompleteActivity extends AppCompatActivity {
 
                 for (int k = 0; k < addsubject_list.size(); k++) {
                     CustomTimeset addsubject_timeset = addsubject_list.get(k);
-                    if ((timeset.getDay() == addsubject_timeset.getDay()) && ((timeset.getStartTime() <= addsubject_timeset.getStartTime() && addsubject_timeset.getStartTime() <= timeset.getEndTime())
-                            || (addsubject_timeset.getEndTime() <= timeset.getEndTime() && timeset.getStartTime() <= addsubject_timeset.getEndTime()))) {
+                    if ((timeset.getDay() == addsubject_timeset.getDay()) &&
+                            ((CheckConflict(timeset, addsubject_timeset) || CheckConflict(addsubject_timeset, timeset)))) {
                         return false;
                     }
-
                 }
             }
         }
         return true;
     }
 
-    private int count_essential_credit() {
-        int result = 0;
-        for (int i = 0; i < essential_subjects.size(); i++) {
-            CustomScheduleItem item = essential_subjects.get(i);
-            result += item.getCredit();
+    private List<Integer> count_essential_credit() {
+        List<Integer> result = new ArrayList<>();
+
+        for (int j = 0; j < 3; j++) {
+            int a = 0;
+            List<CustomScheduleItem> lists = final_choose_subjects.get(j);
+            for (int i = 0; i < lists.size(); i++) {
+                CustomScheduleItem item = lists.get(i);
+                a += item.getCredit();
+            }
+            result.add(Write - a);
         }
         return result;
     }
 
-    private void make_timetable(int write) {
-        int Write2 = Write, Write3 = Write;
-        first_subjects.addAll(essential_subjects);
-        second_subjects.addAll(essential_subjects);
-        third_subjects.addAll(essential_subjects);
-        Collections.shuffle(subjects);
-        for (int i = 0; i < subjects.size(); i++) {
-            if (Write >= subjects.get(i).getCredit() && isaddtosubjects(first_subjects, subjects.get(i))) {
-                first_subjects.add(subjects.get(i));
-                Write -= subjects.get(i).getCredit();
-                continue;
-            }
-            if (Write2 >= subjects.get(i).getCredit() && isaddtosubjects(second_subjects, subjects.get(i))) {
-                second_subjects.add(subjects.get(i));
-                Write2 -= subjects.get(i).getCredit();
-                continue;
-            }
-            if (Write3 >= subjects.get(i).getCredit() && isaddtosubjects(third_subjects, subjects.get(i))) {
-                third_subjects.add(subjects.get(i));
-                Write3 -= subjects.get(i).getCredit();
-                continue;
+    private void make_timetable() {
+        for (int i = 0; i < 3; i++) {
+            int write = essential_subjects_credit.get(i);
+            List<CustomScheduleItem> subjects = every_subjects.get(i);
+            Collections.shuffle(subjects);
+            for (int j = 0; j < subjects.size(); j++) {
+                if (write == 0) {
+                    break;
+                }
+                if (write >= subjects.get(j).getCredit() && isaddtosubjects(final_choose_subjects.get(i), subjects.get(j))) {
+                    final_choose_subjects.get(i).add(subjects.get(j));
+                    write -= subjects.get(j).getCredit();
+                }
             }
         }
     }
-    private List<CustomScheduleItem> takeChooseData() {
-        Gson gson =  new GsonBuilder().create();;
+
+    private List<SubjectSet> takeChooseData() {
+        Gson gson = new GsonBuilder().create();
         SharedPreferences sp = getSharedPreferences("choose", MODE_PRIVATE);
-        String strContact = sp.getString("subject", "");
-
-        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {}.getType();
-
-        List<CustomScheduleItem> datas = gson.fromJson(strContact, listType); // 여기 다 저장되어있으므로 반복문으로 처리하면 될듯
+        String strContact = sp.getString("final", "");
+        Type listType = new TypeToken<List<SubjectSet>>() {
+        }.getType();
+        List<SubjectSet> datas = gson.fromJson(strContact, listType);
         return datas;
     }
 
@@ -360,10 +406,48 @@ public class CompleteActivity extends AppCompatActivity {
 
         editor.putString("subject", gson.toJson(subjects));
         editor.putString("culture", gson.toJson(culturesubjects));
-        Log.e("asd",gson.toJson(culturesubjects));
+        Log.e("asd", gson.toJson(culturesubjects));
         editor.commit();
 
 
     }
 
+    private boolean isnotconflict_list(List<CustomScheduleItem> essential_subjects) {
+        for (int q = 0; q < essential_subjects.size(); q++) {
+            CustomScheduleItem addsubject = essential_subjects.get(q);
+            for (int i = 0; i < essential_subjects.size(); i++) {
+                if (i == q) {
+                    continue;
+                }
+                CustomScheduleItem subject = essential_subjects.get(i);
+                ArrayList<CustomTimeset> timesets = subject.getTimelist();
+                for (int j = 0; j < timesets.size(); j++) {
+                    CustomTimeset timeset = timesets.get(j);
+                    ArrayList<CustomTimeset> addsubject_list = addsubject.getTimelist();
+
+                    for (int k = 0; k < addsubject_list.size(); k++) {
+                        CustomTimeset addsubject_timeset = addsubject_list.get(k);
+                        if ((timeset.getDay() == addsubject_timeset.getDay()) &&
+                                (CheckConflict(timeset, addsubject_timeset) || CheckConflict(addsubject_timeset, timeset))) {
+                            return false;
+                        }
+
+                    }
+                }
+            }
+
+        }
+        return true;
+    }
+
+    private boolean CheckConflict(CustomTimeset start, CustomTimeset end) {
+        if ((start.getEndTime() == end.getStartTime()) || (end.getEndTime() == start.getStartTime())) {
+            return false;
+        }
+        if (((start.getStartTime() <= end.getStartTime() && end.getStartTime() <= start.getEndTime())
+                || (end.getEndTime() <= start.getEndTime() && start.getStartTime() <= end.getEndTime()))) {
+            return true;
+        }
+        return false;
+    }
 }

@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.applicateclass.ChooseSubjects.ChooseSubjectsActivity;
+import com.example.applicateclass.ChooseSubjects.SubjectSet;
 import com.example.applicateclass.TimeTable.CustomScheduleItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,10 +36,9 @@ import java.util.List;
 public class HowMuchActivity extends AppCompatActivity implements Runnable{
     public final String PREFERENCE = "com.example.applicateclass"; //저장, 불러오기 위한
     public String write_score = "write_score";
-    private Context context;
     public int Grade;
     List<CustomScheduleItem> subject = new ArrayList<>();
-    String[] subject_select;
+    List<SubjectSet> subjectSets = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -52,23 +52,16 @@ public class HowMuchActivity extends AppCompatActivity implements Runnable{
                 myref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Log.v("데이터","여기오긴오냐");
                         for(DataSnapshot keys : dataSnapshot.getChildren()){
                             if(keys.getKey().equals(String.valueOf(Grade))){
                                 showData(keys);
-                                onSaveData(subject);
-                                List<String> subject_list = new ArrayList<>();
+
                                 for(int i=0; i<subject.size();i++){
                                     CustomScheduleItem customScheduleItem  = subject.get(i);
-                                    subject_list.add(customScheduleItem.getTitle()+" "+customScheduleItem.getClassnumber()+" "+customScheduleItem.getSub());
-                                    Log.v("데이터",customScheduleItem.getTitle()+" "+customScheduleItem.getClassnumber()+" "+customScheduleItem.getSub());
+                                    Adddata(customScheduleItem);
                                 }
-                                subject_select = subject_list.toArray(new String[0]);
-                                onSaveData_list(subject_list);
+                                onSaveData(subjectSets);
                             }
-
-
-
                         }
                     }
 
@@ -180,27 +173,25 @@ public class HowMuchActivity extends AppCompatActivity implements Runnable{
             subject.add(customScheduleItem);
         }
     }
-    private void onSaveData(List<CustomScheduleItem> timelist) {
+    private void Adddata(CustomScheduleItem item){
+        for (int i=0; i<subjectSets.size();i++){
+            if(subjectSets.get(i).getName().equals(item.getTitle())){
+                subjectSets.get(i).getSubjectsArray().add(item);
+                return;
+            }
+        }
+        List<CustomScheduleItem> items = new ArrayList<>();
+        items.add(item);
+        SubjectSet set = new SubjectSet(item.getTitle(),items,item.getCredit());
+        subjectSets.add(set);
+    }
+    private void onSaveData(List<SubjectSet> timelist) {
         Gson gson = new GsonBuilder().create();
-        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>(){}.getType();
+        Type listType = new TypeToken<List<SubjectSet>>(){}.getType();
         String json = gson.toJson(timelist,listType);
         SharedPreferences sharedPreferences = getSharedPreferences("choose",MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("json",json);
-        editor.commit();
-    }
-    private void onSaveData_list(List<String> values){
-        SharedPreferences prefs = getSharedPreferences("choose",MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        JSONArray a = new JSONArray();
-        for (int i = 0; i < values.size(); i++) {
-            a.put(values.get(i));
-        }
-        if (!values.isEmpty()) {
-            editor.putString("string", a.toString());
-        } else {
-            editor.putString("string", null);
-        }
+        editor.putString("subjectlist",json);
         editor.commit();
     }
 }

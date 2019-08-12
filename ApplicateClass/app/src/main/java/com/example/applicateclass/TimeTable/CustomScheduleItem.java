@@ -94,6 +94,7 @@ public class CustomScheduleItem {
         this.credit = credit;
     }
 
+<<<<<<< HEAD
     public boolean checkOverlap(CustomScheduleItem target){
         for (CustomTimeset i : target.getTimelist()){
             for(CustomTimeset j : timelist){
@@ -103,5 +104,15 @@ public class CustomScheduleItem {
             }
         }
         return true;
+=======
+    @Override
+    public String toString() {
+        String str="";
+        for (int i=0; i<timelist.size();i++){
+            CustomTimeset timeset  = timelist.get(i);
+            str += "\n"+timeset.toString();
+        }
+        return str;
+>>>>>>> f6c2a88061074b0d082a8ed671c9cb172fb7e219
     }
 }
