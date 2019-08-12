@@ -19,6 +19,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import org.w3c.dom.Text;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     static public CustomTimeTable customTimeTable;
     static public CustomSlideBar customSlideBar;
     TextView       tv_openBtn;
+    TextView       tv_commit;
     BackPressCloseHandler backPressCloseHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         customSlideBar = (CustomSlideBar)findViewById(R.id.edit_slide);
 
         tv_openBtn = (TextView)findViewById(R.id.edit_schedule_underTab);
+        tv_commit =(TextView)findViewById(R.id.edit_commit);
 
         customTimeTable.setEditAble(true);
         tv_openBtn.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 customSlideBar.open();
             }
         });
-
+        tv_commit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setCompleteTimeTable();
+            }
+        });
         onSearchData(customTimeTable, selectednumber);
 
        // customTimeTable.addTime(new CustomScheduleItem("title", "sub", new CustomTimeset(1, 900, 1300, "sd")));//title 제목 sub 부제목,
@@ -89,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void setCompleteTimeTable(){
-        SharedPreferences sf = getSharedPreferences("check",MODE_PRIVATE);// check -> empty 가 no면 데이터가 이미 존재한다는 거
+        SharedPreferences sf = getSharedPreferences("check",MODE_PRIVATE);
         SharedPreferences.Editor editor = sf.edit();
         ArrayList<CustomScheduleItem>timeTable = customTimeTable.getScheduleItemArrayList();
 

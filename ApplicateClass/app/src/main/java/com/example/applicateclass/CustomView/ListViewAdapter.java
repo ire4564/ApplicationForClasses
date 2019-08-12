@@ -67,8 +67,8 @@ public class ListViewAdapter extends BaseAdapter {
        name.setText(listViewItem.getTitle().replace(" ","\n"));
        point.setText(listViewItem.getCredit()+"");
        try{
-           time1.setText(listViewItem.getTimelist().get(0).toString());
-           time2.setText(listViewItem.getTimelist().get(1).toString());
+           time1.setText(listViewItem.getTimelist().get(0).toString().replace("~","\n~"));
+           time2.setText(listViewItem.getTimelist().get(1).toString().replace("~","\n~"));
        }catch (Exception e){
 
        }

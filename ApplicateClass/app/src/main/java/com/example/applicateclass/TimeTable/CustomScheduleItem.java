@@ -93,4 +93,15 @@ public class CustomScheduleItem {
     public void setCredit(int credit) {
         this.credit = credit;
     }
+
+    public boolean checkOverlap(CustomScheduleItem target){
+        for (CustomTimeset i : target.getTimelist()){
+            for(CustomTimeset j : timelist){
+                if((j.getStartTime() <= i.getStartTime() && i.getStartTime() <=j.getEndTime())||(j.getStartTime() <= i.getEndTime() && i.getEndTime() <=j.getEndTime())){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }

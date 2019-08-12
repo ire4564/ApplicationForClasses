@@ -35,6 +35,18 @@
                 android:textColor="@color/purpleColor"
                 android:textSize="14dp" />
 
+            <TextView
+                android:id="@+id/edit_commit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="완료"
+                android:fontFamily="@font/sc_6"
+                android:textColor="@color/purpleText"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="right"/>
+
+
         </LinearLayout>
 
 
