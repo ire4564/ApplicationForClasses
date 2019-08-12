@@ -94,17 +94,17 @@ public class CustomScheduleItem {
         this.credit = credit;
     }
 
-<<<<<<< HEAD
-    public boolean checkOverlap(CustomScheduleItem target){
-        for (CustomTimeset i : target.getTimelist()){
-            for(CustomTimeset j : timelist){
-                if((j.getStartTime() <= i.getStartTime() && i.getStartTime() <=j.getEndTime())||(j.getStartTime() <= i.getEndTime() && i.getEndTime() <=j.getEndTime())){
+
+    public boolean checkOverlap(CustomScheduleItem target) {
+        for (CustomTimeset i : target.getTimelist()) {
+            for (CustomTimeset j : timelist) {
+                if ((j.getStartTime() <= i.getStartTime() && i.getStartTime() <= j.getEndTime()) || (j.getStartTime() <= i.getEndTime() && i.getEndTime() <= j.getEndTime())) {
                     return false;
                 }
             }
         }
         return true;
-=======
+    }
     @Override
     public String toString() {
         String str="";
@@ -113,6 +113,6 @@ public class CustomScheduleItem {
             str += "\n"+timeset.toString();
         }
         return str;
->>>>>>> f6c2a88061074b0d082a8ed671c9cb172fb7e219
+
     }
 }

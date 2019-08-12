@@ -25,6 +25,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class CustomSlideBar extends LinearLayout {
     private boolean isOn;
+    private boolean editable;
 
     private View v;
 
@@ -59,6 +60,7 @@ public class CustomSlideBar extends LinearLayout {
 
     private void initView() {
         isOn = false;
+        editable = true;
 
         String infService = Context.LAYOUT_INFLATER_SERVICE;
         LayoutInflater li = (LayoutInflater) getContext().getSystemService(infService);
@@ -72,6 +74,7 @@ public class CustomSlideBar extends LinearLayout {
         loadClasses();
 
         adapter = new ListViewAdapter(culture,getContext());
+        adapter.setEditeable(editable);
 
         ls.setAdapter(adapter);
         v.setVisibility(INVISIBLE);
@@ -174,5 +177,10 @@ public class CustomSlideBar extends LinearLayout {
         }
 
 
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+        adapter.setEditeable(editable);
     }
 }

@@ -38,9 +38,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_edit_schedule);
         Intent intent_info = getIntent();
+        int mode = intent_info.getIntExtra("mode",0);
+
         String selectednumber = intent_info.getExtras().getString("select");
 
         backPressCloseHandler = new BackPressCloseHandler(this);
@@ -51,20 +52,64 @@ public class MainActivity extends AppCompatActivity {
         tv_openBtn = (TextView)findViewById(R.id.edit_schedule_underTab);
         tv_commit =(TextView)findViewById(R.id.edit_commit);
 
-        customTimeTable.setEditAble(true);
         tv_openBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 customSlideBar.open();
             }
         });
-        tv_commit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setCompleteTimeTable();
-            }
-        });
-        onSearchData(customTimeTable, selectednumber);
+
+
+        if(mode==1){
+            customTimeTable.setEditAble(false);
+            getCompleteTimeTable();
+            tv_commit.setText("수 정");
+            tv_openBtn.setText("수업 리스트");
+
+            customSlideBar.setEditable(false);
+            tv_commit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    setCompleteTimeTable();
+                    finish();
+                    Intent intent = new Intent(MainActivity.this , MainActivity.class);
+                    intent.putExtra("mode",2);
+                    startActivity(intent);
+                }
+            });
+        }
+        else if(mode == 2){
+            customTimeTable.setEditAble(true);
+            getCompleteTimeTable();
+            tv_commit.setText("완 료");
+
+            tv_commit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    setCompleteTimeTable();
+                    finish();
+                    Intent intent = new Intent(MainActivity.this , MainActivity.class);
+                    intent.putExtra("mode",1);
+                    startActivity(intent);
+                }
+            });
+        }
+        else{
+            customTimeTable.setEditAble(true);
+            onSearchData(customTimeTable, selectednumber);
+
+            tv_commit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    setCompleteTimeTable();
+                    finish();
+                    Intent intent = new Intent(MainActivity.this , MainActivity.class);
+                    intent.putExtra("mode",1);
+                    startActivity(intent);
+                }
+            });
+        }
+
 
        // customTimeTable.addTime(new CustomScheduleItem("title", "sub", new CustomTimeset(1, 900, 1300, "sd")));//title 제목 sub 부제목,
         // 커스텀 타임셋 (개수 제한없음 , 리스트 배열가능)
@@ -107,7 +152,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private void getCompleteTimeTable(){
+        SharedPreferences sf = getSharedPreferences("check",MODE_PRIVATE);
+        Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {
+        }.getType();
+        List<CustomScheduleItem> datas  = gson.fromJson(sf.getString("timetable",""),listType);
+        for(CustomScheduleItem i : datas) {
+            customTimeTable.addTime(i);
+        }
 
+
+    }
     @Override
     public void onBackPressed() {
         if(customSlideBar.isOn())
