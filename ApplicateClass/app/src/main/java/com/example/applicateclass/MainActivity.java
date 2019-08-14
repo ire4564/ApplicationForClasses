@@ -154,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sf.edit();
         ArrayList<CustomScheduleItem>timeTable = customTimeTable.getScheduleItemArrayList();
 
+        Log.e("asd",gson.toJson(timeTable));
         editor.putString("timetable",gson.toJson(timeTable));
         editor.commit();
 
@@ -164,6 +165,8 @@ public class MainActivity extends AppCompatActivity {
         Type listType = new TypeToken<ArrayList<CustomScheduleItem>>() {
         }.getType();
         List<CustomScheduleItem> datas  = gson.fromJson(sf.getString("timetable",""),listType);
+        Log.e("asd",gson.toJson(datas)+"");
+
         for(CustomScheduleItem i : datas) {
             customTimeTable.addTime(i);
         }

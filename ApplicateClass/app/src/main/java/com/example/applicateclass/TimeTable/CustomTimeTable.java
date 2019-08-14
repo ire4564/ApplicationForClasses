@@ -144,6 +144,7 @@ public class CustomTimeTable extends LinearLayout {
             Toast.makeText(getContext(), "삭제 실패", Toast.LENGTH_LONG).show();
             return false;
         }
+        scheduleItemArrayList.remove(item);
         return true;
     }
 
