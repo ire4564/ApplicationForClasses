@@ -34,7 +34,7 @@ public class SplashActivity extends Activity {
             }.getType();
             List<CustomScheduleItem> datas  = gson.fromJson(sf.getString("timetable",""),listType);
 
-            if(datas.size()==0) {
+            if( datas==null|| datas.size()== 0) {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         DoctoroActivity.class);
