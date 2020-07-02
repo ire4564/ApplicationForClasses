@@ -1,4 +1,4 @@
-# 조건부 최적화 시간표 자동 생성 App
+# Make private time table, automation Application
 2018 하계 Bottom UP 경진대회 출품작
 
 ![image](https://user-images.githubusercontent.com/44183221/86326980-72223600-bc7d-11ea-804b-4610b81b5bac.png)
