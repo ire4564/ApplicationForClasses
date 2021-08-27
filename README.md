@@ -1,6 +1,7 @@
 
 
-![앗! 벌써 수강신청이잖아_ (1)](C:\Users\user\Downloads\앗! 벌써 수강신청이잖아_ (1).png) 
+![앗! 벌써 수강신청이잖아_ (1)](https://user-images.githubusercontent.com/44183221/131077018-747ff067-4941-4806-8355-1ef80c690bed.png) 
+
 
 ![preview badge](https://img.shields.io/github/languages/code-size/ire4564/Application_for_classes)  ![preview badge](https://img.shields.io/github/repo-size/ire4564/Application_for_classes)
 
@@ -9,9 +10,7 @@
 <img src="https://img.shields.io/badge/Android Native-00c7b7?style=flat&logo=androidstudio&logoColor=white"/>  [![img](https://camo.githubusercontent.com/830fa8a3e043db4dfec789f35fc944fee18f4ab5c69270ee7a1153164e6d3ead/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176612d3135373262363f7374796c653d666c6174266c6f676f3d63737333266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/830fa8a3e043db4dfec789f35fc944fee18f4ab5c69270ee7a1153164e6d3ead/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176612d3135373262363f7374796c653d666c6174266c6f676f3d63737333266c6f676f436f6c6f723d7768697465)  [![img](https://camo.githubusercontent.com/937e9c5148840b2a524cc88a9a5be2acee19641a8f1f167bc84a981ced06c82f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50686f746f73686f702d3030353263633f7374796c653d666c6174266c6f676f3d61646f6265266c6f676f436f6c6f723d7768697465)](https://camo.githubusercontent.com/937e9c5148840b2a524cc88a9a5be2acee19641a8f1f167bc84a981ced06c82f/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50686f746f73686f702d3030353263633f7374796c653d666c6174266c6f676f3d61646f6265266c6f676f436f6c6f723d7768697465)  
 
 ## Video Demo 
-
-![gif](C:\Users\user\Downloads\gif.gif) ![gif (2)](C:\Users\user\Downloads\gif (2).gif) 
-
+![gif](https://user-images.githubusercontent.com/44183221/131077065-59925e1e-1ff8-4f7a-9cec-2c908f6be3d3.gif) ![gif (2)](https://user-images.githubusercontent.com/44183221/131077073-1e76119f-cba6-4450-a99e-4b3c6c2788fd.gif) 
 
 
 ## About Project
